@@ -1,0 +1,35 @@
+{
+  "name": "alma-mineral",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Storefront headless de Alma Mineral (botica mineral contemporánea) sobre WebProAI CMS Studio (@latinovation/cms-client v4.4.0) con GSAP, Wompi y gestión completa desde /portal.",
+  "scripts": {
+    "dev": "next dev -p 3025",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "typecheck": "tsc --noEmit",
+    "cms:pull": "node ../cms-landings/packages/cms-cli/bin/ltn.js pull almamineral --out ./cms",
+    "cms:build": "node cms/seed/build-manifest.mjs",
+    "cms:diff": "node ../cms-landings/packages/cms-cli/bin/ltn.js push almamineral --dry-run --skip-collections --strict-keys --file cms/almamineral.snapshot.json",
+    "cms:push": "node ../cms-landings/packages/cms-cli/bin/ltn.js push almamineral --overwrite --skip-collections --strict-keys --publish --file cms/almamineral.snapshot.json",
+    "cms:audit": "node node_modules/@latinovation/cms-client/bin/audit-editability.mjs --slug almamineral --url http://localhost:3025 --item-route \"/producto/:slug\" --min 95"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@latinovation/cms-client": "file:vendor/latinovation-cms-client-4.4.0.tgz",
+    "gsap": "^3.13.0",
+    "lucide-react": "^0.511.0",
+    "next": "15.5.29",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "typescript": "^5.8.3"
+  }
+}

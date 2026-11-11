@@ -1,0 +1,19 @@
+# Dependencies & build
+node_modules/
+.next/
+out/
+build/
+
+# Secrets & local env (NEVER commit tokens or credentials)
+.env
+.env.*
+!.env.example
+
+# Debug & OS
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+next-env.d.ts
