@@ -2,7 +2,7 @@ import { getPage, tryFetchDelivery, type CmsPage, type DeliveryPayload } from '@
 
 export const CMS_URL = (process.env.NEXT_PUBLIC_CMS_URL || 'https://webproai.tech').replace(/\/$/, '');
 export const CMS_SLUG = process.env.NEXT_PUBLIC_CMS_SLUG || 'almamineral';
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://almamineral.179.236.72.201.sslip.io').replace(/\/$/, '');
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://tualmamineral.com').replace(/\/$/, '');
 
 export const PORTAL_ORIGINS = (process.env.NEXT_PUBLIC_PORTAL_ORIGINS || 'https://webproai.tech,http://localhost:3005')
   .split(',')
