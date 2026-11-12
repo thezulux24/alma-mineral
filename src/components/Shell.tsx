@@ -360,8 +360,8 @@ export function CartDrawer() {
 }
 
 export function ToastBanner() {
-  const { toast } = useStoreUi();
-  if (!toast) return null;
+  const { toast, cartOpen } = useStoreUi();
+  if (!toast || cartOpen) return null;
   return (
     <div className="am-toast" role="status" aria-live="polite">
       {toast}

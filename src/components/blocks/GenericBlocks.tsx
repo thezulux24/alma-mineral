@@ -1,7 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Check, ChevronDown, Leaf, Shield, Truck } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import Link from 'next/link';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+import { Check, ChevronDown, Leaf, MessageCircle, Shield, Sparkles, Truck } from 'lucide-react';
 import {
   CmsImage,
   CmsLink,
@@ -10,6 +14,10 @@ import {
   CmsText,
   type CmsBlockProps,
 } from '@latinovation/cms-client/react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function renderCatalogIcon(name?: string) {
   switch (name) {
@@ -25,11 +33,29 @@ function renderCatalogIcon(name?: string) {
 }
 
 export function ContentSplitBlock({ section: s }: CmsBlockProps) {
+  const rootRef = useRef<HTMLDivElement>(null);
   const isLeft = s.data.imageSide === 'left';
+
+  useGSAP(
+    () => {
+      if (!rootRef.current || typeof window === 'undefined') return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      gsap.from(rootRef.current.children, {
+        y: 22,
+        opacity: 0,
+        duration: 0.65,
+        stagger: 0.1,
+        ease: 'power3.out',
+        clearProps: 'transform,opacity',
+        scrollTrigger: { trigger: rootRef.current, start: 'top 86%', once: true },
+      });
+    },
+    { scope: rootRef },
+  );
 
   return (
     <div className="am-section-pad">
-      <div className={`am-container am-split-content ${isLeft ? 'is-img-left' : ''}`}>
+      <div ref={rootRef} className={`am-container am-split-content ${isLeft ? 'is-img-left' : ''}`}>
         <div className="am-split-text-col">
           <CmsText f="heading" as="h2" className="am-h2" />
           <CmsRichText f="body" className="am-richtext am-body-text" />
@@ -48,85 +74,138 @@ export function ContentSplitBlock({ section: s }: CmsBlockProps) {
 }
 
 export function FeaturesAlternatingBlock(_props: CmsBlockProps) {
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!rootRef.current || typeof window === 'undefined') return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const rows = gsap.utils.toArray<HTMLElement>('.am-alt-row', rootRef.current);
+      rows.forEach((row) => {
+        gsap.from(row, {
+          y: 24,
+          opacity: 0,
+          duration: 0.65,
+          ease: 'power3.out',
+          clearProps: 'transform,opacity',
+          scrollTrigger: { trigger: row, start: 'top 86%', once: true },
+        });
+      });
+    },
+    { scope: rootRef },
+  );
+
   return (
-    <div className="am-section-pad am-surface-band">
+    <div ref={rootRef} className="am-section-pad am-surface-band">
       <div className="am-container">
         <CmsText f="heading" as="h2" className="am-h2 am-mb-xl" />
-        <div className="am-alt-rows">
-          <CmsList
-            f="items"
-            wrap={false}
-            renderItem={(_item, i, h) => (
-              <article key={i} {...h.attrs} className={`am-alt-row ${i % 2 === 1 ? 'is-reversed' : ''}`}>
-                <div className="am-alt-media">
-                  <CmsImage f="image" className="am-alt-img" width={760} height={880} />
-                </div>
-                <div className="am-alt-copy">
-                  <CmsText f="title" as="h3" className="am-h3" />
-                  <CmsText f="body" as="p" className="am-body-text" />
-                  <CmsLink f="link" className="am-inline-cta" />
-                </div>
-                {h.toolbar}
-              </article>
-            )}
-          />
-        </div>
+        <CmsList
+          f="items"
+          className="am-alt-rows"
+          renderItem={(_item, i, h) => (
+            <article key={i} {...h.attrs} className={`am-alt-row ${i % 2 === 1 ? 'is-reversed' : ''}`}>
+              <div className="am-alt-media">
+                <CmsImage f="image" className="am-alt-img" width={760} height={880} />
+              </div>
+              <div className="am-alt-copy">
+                <CmsText f="title" as="h3" className="am-h3" />
+                <CmsText f="body" as="p" className="am-body-text" />
+                <CmsLink f="link" className="am-inline-cta" />
+              </div>
+              {h.toolbar}
+            </article>
+          )}
+        />
       </div>
     </div>
   );
 }
 
 export function FeaturesGridBlock(_props: CmsBlockProps) {
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!rootRef.current || typeof window === 'undefined') return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      gsap.from('.am-feature-item', {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: 'power3.out',
+        clearProps: 'transform,opacity',
+        scrollTrigger: { trigger: rootRef.current, start: 'top 88%', once: true },
+      });
+    },
+    { scope: rootRef },
+  );
+
   return (
-    <div className="am-section-pad am-surface-band">
+    <div ref={rootRef} className="am-section-pad am-surface-band">
       <div className="am-container">
         <div className="am-section-head">
           <CmsText f="heading" as="h2" className="am-h2" />
           <CmsText f="intro" as="p" className="am-lead" />
         </div>
-        <div className="am-features-row">
-          <CmsList
-            f="items"
-            wrap={false}
-            renderItem={(item, i, h) => (
-              <article key={i} {...h.attrs} className="am-feature-item">
-                <span className="am-feature-icon" aria-hidden="true">
-                  {renderCatalogIcon(item?.icon)}
-                </span>
-                <CmsText f="title" as="h3" className="am-h3" />
-                <CmsText f="body" as="p" className="am-body-text" />
-                {h.toolbar}
-              </article>
-            )}
-          />
-        </div>
+        <CmsList
+          f="items"
+          className="am-features-row"
+          renderItem={(item, i, h) => (
+            <article key={i} {...h.attrs} className="am-feature-item">
+              <span className="am-feature-icon" aria-hidden="true">
+                {renderCatalogIcon(item?.icon)}
+              </span>
+              <CmsText f="title" as="h3" className="am-h3" />
+              <CmsText f="body" as="p" className="am-body-text" />
+              {h.toolbar}
+            </article>
+          )}
+        />
       </div>
     </div>
   );
 }
 
 export function StepsProcessBlock(_props: CmsBlockProps) {
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!rootRef.current || typeof window === 'undefined') return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      gsap.from('.am-step-card', {
+        y: 22,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: 'power3.out',
+        clearProps: 'transform,opacity',
+        scrollTrigger: { trigger: rootRef.current, start: 'top 88%', once: true },
+      });
+    },
+    { scope: rootRef },
+  );
+
   return (
-    <div className="am-section-pad">
+    <div ref={rootRef} className="am-section-pad">
       <div className="am-container">
         <div className="am-section-head">
           <CmsText f="heading" as="h2" className="am-h2" />
           <CmsText f="intro" as="p" className="am-lead" />
         </div>
-        <ol className="am-steps-list">
-          <CmsList
-            f="items"
-            wrap={false}
-            renderItem={(_item, i, h) => (
-              <li key={i} {...h.attrs} className="am-step-card">
-                <span className="am-step-num am-tabular">Paso {i + 1}</span>
-                <CmsText f="title" as="h3" className="am-h3" />
-                <CmsText f="body" as="p" className="am-body-text" />
-                {h.toolbar}
-              </li>
-            )}
-          />
-        </ol>
+        <CmsList
+          f="items"
+          as="ol"
+          className="am-steps-list"
+          renderItem={(_item, i, h) => (
+            <li key={i} {...h.attrs} className="am-step-card">
+              <CmsText f="title" as="h3" className="am-h3" />
+              <CmsText f="body" as="p" className="am-body-text" />
+              {h.toolbar}
+            </li>
+          )}
+        />
       </div>
     </div>
   );
@@ -134,44 +213,75 @@ export function StepsProcessBlock(_props: CmsBlockProps) {
 
 export function FaqAccordionBlock(_props: CmsBlockProps) {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!rootRef.current || typeof window === 'undefined') return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      gsap.from('.am-faq-item', {
+        y: 16,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.05,
+        ease: 'power3.out',
+        clearProps: 'transform,opacity',
+        scrollTrigger: { trigger: rootRef.current, start: 'top 88%', once: true },
+      });
+    },
+    { scope: rootRef },
+  );
 
   return (
-    <div className="am-section-pad">
+    <div ref={rootRef} className="am-section-pad am-faq-section">
       <div className="am-container am-faq-layout">
         <div className="am-faq-intro-col">
           <CmsText f="heading" as="h2" className="am-h2" />
           <CmsText f="intro" as="p" className="am-lead" />
+
+          <div className="am-faq-help-card">
+            <div className="am-faq-help-head">
+              <Sparkles size={17} />
+              <strong>¿Cambias desde un antitranspirante comercial?</strong>
+            </div>
+            <p>
+              Durante los primeros días tus poros liberan residuos acumulados. Aplica 3 a 4 atomizaciones sobre piel
+              limpia y seca para protección mineral continua.
+            </p>
+            <Link href="/contacto" className="am-inline-cta">
+              <MessageCircle size={15} /> Hablar con asesoría de la botica →
+            </Link>
+          </div>
         </div>
 
-        <div className="am-faq-list">
-          <CmsList
-            f="items"
-            wrap={false}
-            renderItem={(_item, i, h) => {
-              const isOpen = openIdx === i;
-              return (
-                <div key={i} {...h.attrs} className={`am-faq-item ${isOpen ? 'is-open' : ''}`}>
-                  <button
-                    type="button"
-                    aria-expanded={isOpen}
-                    onClick={() => setOpenIdx(isOpen ? null : i)}
-                    className="am-faq-trigger"
-                  >
-                    <CmsText f="question" as="span" className="am-faq-q" />
-                    <ChevronDown size={19} className="am-faq-chevron" />
-                  </button>
-                  {/* Keep answer in SSR DOM so SEO and CMS editability audit see 100 % of answers */}
-                  <div className="am-faq-panel" aria-hidden={!isOpen}>
-                    <div className="am-faq-panel-inner">
-                      <CmsRichText f="answer" className="am-richtext am-body-text" />
-                    </div>
+        <CmsList
+          f="items"
+          className="am-faq-list"
+          renderItem={(_item, i, h) => {
+            const isOpen = openIdx === i;
+            return (
+              <div key={i} {...h.attrs} className={`am-faq-item ${isOpen ? 'is-open' : ''}`}>
+                <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  onClick={() => setOpenIdx(isOpen ? null : i)}
+                  className="am-faq-trigger"
+                >
+                  <CmsText f="question" as="span" className="am-faq-q" />
+                  <span className="am-faq-chevron-box">
+                    <ChevronDown size={18} className="am-faq-chevron" />
+                  </span>
+                </button>
+                <div className="am-faq-panel" aria-hidden={!isOpen}>
+                  <div className="am-faq-panel-inner">
+                    <CmsRichText f="answer" className="am-richtext am-body-text" />
                   </div>
-                  {h.toolbar}
                 </div>
-              );
-            }}
-          />
-        </div>
+                {h.toolbar}
+              </div>
+            );
+          }}
+        />
       </div>
     </div>
   );
@@ -193,7 +303,7 @@ export function CtaBannerBlock({ section: s }: CmsBlockProps) {
         </div>
         <div className="am-cta-actions">
           {s.data.primaryCta ? (
-            <CmsLink f="primaryCta" className={inverse ? 'am-btn am-btn-paper' : 'am-btn am-btn-primary'} />
+            <CmsLink f="primaryCta" className={inverse ? 'am-btn am-btn-gold' : 'am-btn am-btn-primary'} />
           ) : null}
           {s.data.secondaryCta ? (
             <CmsLink f="secondaryCta" className="am-btn am-btn-outline" />
@@ -215,10 +325,6 @@ export function RichTextSectionBlock({ section: s }: CmsBlockProps) {
   );
 }
 
-/**
- * Respaldo universal (GenericSection): cualquier bloque nuevo creado desde /portal o Art AI
- * renderiza automáticamente sus textos, imágenes, enlaces y listas con primitivas editables.
- */
 export function GenericSection({ section: s }: CmsBlockProps) {
   const data = s.data || {};
 
@@ -241,23 +347,21 @@ export function GenericSection({ section: s }: CmsBlockProps) {
           {data.cta ? <CmsLink f="cta" className="am-btn am-btn-primary" /> : null}
         </div>
         {Array.isArray(data.items) && data.items.length > 0 ? (
-          <div className="am-features-row am-mt-lg">
-            <CmsList
-              f="items"
-              wrap={false}
-              renderItem={(it, i, h) => (
-                <article key={i} {...h.attrs} className="am-feature-item">
-                  {it?.image ? <CmsImage f="image" className="am-alt-img" width={480} height={360} /> : null}
-                  {it?.title ? <CmsText f="title" as="h3" className="am-h3" /> : null}
-                  {it?.question ? <CmsText f="question" as="h3" className="am-h3" /> : null}
-                  {it?.body ? <CmsText f="body" as="p" className="am-body-text" /> : null}
-                  {it?.answer ? <CmsRichText f="answer" className="am-richtext am-body-text" /> : null}
-                  {it?.link ? <CmsLink f="link" className="am-inline-cta" /> : null}
-                  {h.toolbar}
-                </article>
-              )}
-            />
-          </div>
+          <CmsList
+            f="items"
+            className="am-features-row am-mt-lg"
+            renderItem={(it, i, h) => (
+              <article key={i} {...h.attrs} className="am-feature-item">
+                {it?.image ? <CmsImage f="image" className="am-alt-img" width={480} height={360} /> : null}
+                {it?.title ? <CmsText f="title" as="h3" className="am-h3" /> : null}
+                {it?.question ? <CmsText f="question" as="h3" className="am-h3" /> : null}
+                {it?.body ? <CmsText f="body" as="p" className="am-body-text" /> : null}
+                {it?.answer ? <CmsRichText f="answer" className="am-richtext am-body-text" /> : null}
+                {it?.link ? <CmsLink f="link" className="am-inline-cta" /> : null}
+                {h.toolbar}
+              </article>
+            )}
+          />
         ) : null}
       </div>
     </div>

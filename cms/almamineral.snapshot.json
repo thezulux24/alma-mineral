@@ -1,6 +1,6 @@
 {
   "$schema": "https://cms-studio.latinovation.com/schemas/project-snapshot-v1.json",
-  "pulledAt": "2026-11-11T20:40:58.993Z",
+  "pulledAt": "2026-11-12T00:42:34.910Z",
   "project": {
     "id": "cmwckqt8v00jnjx6fhxpgnwie",
     "name": "Alma Mineral",
@@ -8,10 +8,10 @@
     "type": "MULTI_PAGE",
     "framework": "NEXTJS",
     "status": "PUBLISHED",
-    "productionUrl": "https://almamineral.webproai.tech",
-    "previewUrl": "https://almamineral.179.236.72.201.sslip.io",
+    "productionUrl": "https://tualmamineral.com",
+    "previewUrl": "https://tualmamineral.com",
     "publicApiKey": "ltn_pub_almamineral_e500b4dc35",
-    "lastPublishedAt": null
+    "lastPublishedAt": "2026-11-12T00:38:07.428Z"
   },
   "tenant": {
     "id": "cmwckqt8g00jkjx6fvg9gbv0s",
@@ -149,7 +149,36 @@
     }
   ],
   "globalData": {
+    "ui": {
+      "addToCart": "Agregar al ritual",
+      "cartTitle": "Tu bolsa mineral",
+      "emptyCart": "Tu bolsa aún está vacía. Elige tu presentación individual o un pack con ahorro.",
+      "outOfStock": "Agotado temporalmente",
+      "addedToCart": "En tu bolsa",
+      "applyCoupon": "Aplicar",
+      "goToCheckout": "Finalizar compra",
+      "continueShopping": "Seguir viendo rituales",
+      "couponPlaceholder": "Código (ej. ALMAMINERAL10)"
+    },
     "city": "Valle del Cauca, Colombia",
+    "site": {
+      "notFound": {
+        "title": "Esta página no hace parte de la botica.",
+        "body": "Es posible que el enlace haya cambiado tras el rediseño. Vuelve al inicio o explora nuestras presentaciones.",
+        "ctaLabel": "Ir a la tienda",
+        "ctaHref": "/tienda"
+      },
+      "cookieBanner": {
+        "enabled": true,
+        "text": "Usamos cookies esenciales para tu bolsa de compras y medición anónima de pedidos.",
+        "acceptLabel": "Aceptar",
+        "rejectLabel": "Solo esenciales"
+      },
+      "whatsappOrders": {
+        "enabled": false,
+        "cart": false
+      }
+    },
     "email": "almamineral.co@gmail.com",
     "hours": "Lunes a sábado · 9:00 a. m. – 6:00 p. m.",
     "phone": "+57 300 000 0000",
@@ -170,86 +199,92 @@
         "url": "https://www.facebook.com/share/15jRJCEUTN/"
       }
     ],
+    "logoUrl": "/uploads/media/alma-mineral-logo-1794429194512-rq60.webp",
     "tagline": "Desodorante natural de Piedra de Alumbre y siete activos botánicos en vidrio ámbar. Hecho en Colombia.",
     "brandName": "Alma Mineral",
     "legalNote": "© 2026 Alma Mineral Colombia. Todos los derechos reservados.",
+    "faviconUrl": "/uploads/media/alma-mineral-isotipo-1794429195299-zu99.webp",
+    "cartFreeDone": "Tu pedido ya incluye envío nacional gratis",
     "designSystem": {
       "version": 2,
-      "name": "Escenario Mineral de Alumbre",
+      "name": "Atelier Botánico de Lujo · Alma Mineral",
       "themeMode": "light",
       "colors": {
-        "background": "#EAE7E1",
-        "surface": "#F4F2EE",
-        "surfaceAlt": "#DFDBD3",
-        "text": "#231914",
-        "muted": "#5E4F45",
-        "border": "#CBC5BA",
-        "primary": "#1F381E",
-        "primaryText": "#F4F2EE",
-        "secondary": "#6B3612",
-        "secondaryText": "#F4F2EE",
-        "accent": "#8A6A26",
-        "success": "#1E5C35",
-        "danger": "#9E2A1F",
+        "background": "#F2F4F1",
+        "surface": "#FFFFFF",
+        "surfaceAlt": "#E6EAE4",
+        "text": "#121814",
+        "muted": "#4A544D",
+        "border": "#D6DDD4",
+        "primary": "#14261B",
+        "primaryText": "#FAF8F5",
+        "secondary": "#6B4226",
+        "secondaryText": "#FAF8F5",
+        "accent": "#6E5015",
+        "success": "#1B6B3E",
+        "danger": "#A62B22",
         "custom": [
           {
-            "name": "Cristal Dorado Claro",
-            "value": "#CFA958"
+            "name": "Oro Ámbar Cepillado",
+            "value": "#E5C478"
           },
           {
-            "name": "Bosque Profundo",
-            "value": "#162915"
+            "name": "Obsidiana Botánica",
+            "value": "#0D1912"
           },
           {
-            "name": "Ámbar Refracción",
-            "value": "#7C4118"
+            "name": "Piedra Caliza",
+            "value": "#EAE8E2"
           }
         ]
       },
       "typography": {
         "headingFont": {
-          "family": "Young Serif",
+          "family": "Cormorant Garamond",
           "source": "google",
           "weights": [
-            400
+            500,
+            600,
+            700
           ],
           "category": "serif"
         },
         "bodyFont": {
-          "family": "Source Serif 4",
+          "family": "Plus Jakarta Sans",
           "source": "google",
           "weights": [
             400,
             500,
-            600
+            600,
+            700
           ],
-          "category": "serif"
+          "category": "sans-serif"
         },
-        "baseSize": 17,
-        "scaleRatio": 1.25,
-        "headingWeight": 400,
+        "baseSize": 16,
+        "scaleRatio": 1.28,
+        "headingWeight": 600,
         "bodyWeight": 400,
         "headingCase": "none",
         "headingTracking": -0.02,
-        "bodyLineHeight": 1.55
+        "bodyLineHeight": 1.6
       },
       "shape": {
-        "radiusSm": 6,
-        "radiusMd": 12,
-        "radiusLg": 16,
+        "radiusSm": 8,
+        "radiusMd": 14,
+        "radiusLg": 22,
         "radiusFull": 999,
         "borderWidth": 1
       },
       "shadow": {
-        "sm": "0 1px 2px rgb(35 25 20 / 0.06)",
-        "md": "0 12px 28px -14px rgb(35 25 20 / 0.18)",
-        "lg": "0 24px 48px -20px rgb(35 25 20 / 0.26)"
+        "sm": "0 2px 8px -2px rgb(18 24 20 / 0.05)",
+        "md": "0 16px 36px -14px rgb(18 24 20 / 0.12)",
+        "lg": "0 28px 64px -20px rgb(18 24 20 / 0.22)"
       },
       "spacing": {
-        "sectionY": 112,
-        "sectionYMobile": 68,
+        "sectionY": 104,
+        "sectionYMobile": 64,
         "gutter": 24,
-        "maxWidth": 1440
+        "maxWidth": 1360
       },
       "buttons": {
         "style": "solid",
@@ -257,11 +292,11 @@
         "case": "none",
         "weight": 600,
         "paddingY": 15,
-        "paddingX": 24
+        "paddingX": 26
       },
       "motion": {
         "level": "expressive",
-        "durationMs": 260
+        "durationMs": 280
       },
       "header": {
         "variant": "simple",
@@ -276,47 +311,15 @@
       },
       "globalCss": ""
     },
+    "dispatchNote": "Despachos a toda Colombia · Wompi y Contraentrega",
+    "footerPhotoUrl": "/uploads/media/alma-mineral-trio-ambar-estudio-1794429199176-rc7l.webp",
     "whatsappNumber": "",
+    "cartFreeMissing": "Agrega {monto} más para tener envío gratis en Colombia",
     "whatsappPrefill": "Hola Alma Mineral, quiero hacer una consulta sobre el desodorante natural.",
     "announcementText": "Envío nacional $5.000 COP · Gratis desde $95.000 COP · Código ALMAMINERAL10 (-10 %)",
-    "logoUrl": "/uploads/media/alma-mineral-logo-1794429194512-rq60.webp",
-    "faviconUrl": "/uploads/media/alma-mineral-isotipo-1794429195299-zu99.webp",
-    "footerPhotoUrl": "/uploads/media/alma-mineral-trio-ambar-estudio-1794429199176-rc7l.webp",
-    "dispatchNote": "Despachos a toda Colombia · Wompi y Contraentrega",
-    "cartFreeMissing": "Agrega {monto} más para tener envío gratis en Colombia",
-    "cartFreeDone": "Tu pedido ya incluye envío nacional gratis",
     "footerNavHeading": "Recorrido",
-    "footerContactHeading": "Botica y atención",
     "footerSocialHeading": "Comunidad",
-    "ui": {
-      "addToCart": "Agregar al ritual",
-      "addedToCart": "En tu bolsa",
-      "outOfStock": "Agotado temporalmente",
-      "cartTitle": "Tu bolsa mineral",
-      "emptyCart": "Tu bolsa aún está vacía. Elige tu presentación individual o un pack con ahorro.",
-      "continueShopping": "Seguir viendo rituales",
-      "goToCheckout": "Finalizar compra",
-      "couponPlaceholder": "Código (ej. ALMAMINERAL10)",
-      "applyCoupon": "Aplicar"
-    },
-    "site": {
-      "cookieBanner": {
-        "enabled": true,
-        "text": "Usamos cookies esenciales para tu bolsa de compras y medición anónima de pedidos.",
-        "acceptLabel": "Aceptar",
-        "rejectLabel": "Solo esenciales"
-      },
-      "whatsappOrders": {
-        "enabled": false,
-        "cart": false
-      },
-      "notFound": {
-        "title": "Esta página no hace parte de la botica.",
-        "body": "Es posible que el enlace haya cambiado tras el rediseño. Vuelve al inicio o explora nuestras presentaciones.",
-        "ctaLabel": "Ir a la tienda",
-        "ctaHref": "/tienda"
-      }
-    }
+    "footerContactHeading": "Botica y atención"
   },
   "seoConfig": {
     "metaTitle": "Alma Mineral · Desodorante Natural de Piedra de Alumbre en Colombia",

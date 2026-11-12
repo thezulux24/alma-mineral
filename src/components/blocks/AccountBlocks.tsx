@@ -240,8 +240,7 @@ export function AccountAccessSection(_props: CmsBlockProps) {
                     onChange={(e) => setAcceptsTerms(e.target.checked)}
                   />
                   <span>
-                    Acepto la <Link href="/privacidad">política de privacidad</Link> y los{' '}
-                    <Link href="/terminos">términos del servicio</Link>.
+                    Acepto la <Link href="/privacidad">política de privacidad y términos del servicio</Link>.
                   </span>
                 </label>
                 <button type="submit" disabled={busy} className="am-btn am-btn-primary am-w-full">

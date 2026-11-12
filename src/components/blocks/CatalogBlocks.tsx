@@ -4,8 +4,22 @@ import React, { useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { Check, Heart, Minus, Plus, ShieldCheck, ShoppingBag, Star, Truck } from 'lucide-react';
+import {
+  ArrowRight,
+  Check,
+  Droplets,
+  Heart,
+  Leaf,
+  Minus,
+  Plus,
+  ShieldCheck,
+  ShoppingBag,
+  Sparkles,
+  Star,
+  Truck,
+} from 'lucide-react';
 import { editAttrs, galleryField, markdownToHtml, mediaUrl, type CollectionItem } from '@latinovation/cms-client';
 import {
   CmsAddItem,
@@ -29,6 +43,10 @@ import {
 } from '@latinovation/cms-client/react';
 import { useStoreUi } from '../StoreUiContext';
 
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 export function ProductCard({ item }: { item: CollectionItem }) {
   const cart = useCart();
   const money = useMoney();
@@ -39,8 +57,11 @@ export function ProductCard({ item }: { item: CollectionItem }) {
   const liked = wishlist.ids.includes(pid) || wishlist.ids.includes(item.id);
   const price = Number(item.price ?? 37000);
   const compare = Number(item.compareAtPrice ?? 0);
+  const units = Number(item.unitsCount ?? 1);
+  const perUnit = Math.round(price / Math.max(1, units));
   const stock = item.stock === undefined || item.stock === null ? 99 : Number(item.stock);
   const inStock = stock > 0 && item.inStock !== false;
+  const isBestBundle = units === 3;
 
   const handleAdd = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -62,57 +83,83 @@ export function ProductCard({ item }: { item: CollectionItem }) {
 
   return (
     <CmsItem collection="productos" item={item}>
-      <article className="am-prod-card">
+      <article className={`am-prod-card ${isBestBundle ? 'is-featured-bundle' : ''}`}>
         <div className="am-prod-media-wrap">
-          <Link href={`/producto/${item.slug}`} className="am-prod-media-link">
-            <CmsItemImage f="imageUrl" className="am-prod-img" width={640} height={800} />
+          <Link href={`/producto/${item.slug}`} className="am-prod-media-link" aria-label={String(item.title)}>
+            <CmsItemImage f="imageUrl" className="am-prod-img" width={720} height={820} />
           </Link>
 
-          {item.badge ? <CmsItemText f="badge" as="span" className="am-prod-badge" /> : null}
+          {item.badge ? (
+            <CmsItemText
+              f="badge"
+              as="span"
+              className={`am-prod-badge ${isBestBundle ? 'is-gold' : ''}`}
+            />
+          ) : null}
 
           <button
             type="button"
             onClick={() => wishlist.toggle(pid)}
-            aria-pressed={liked}
             aria-label={liked ? 'Quitar de favoritos' : 'Guardar en favoritos'}
+            aria-pressed={liked}
             className={`am-wish-btn ${liked ? 'is-liked' : ''}`}
           >
-            <Heart size={17} fill={liked ? 'currentColor' : 'none'} />
+            <Heart size={18} fill={liked ? 'currentColor' : 'none'} />
           </button>
         </div>
 
         <div className="am-prod-body">
-          <div className="am-prod-meta-top">
-            {item.category ? <CmsItemText f="category" as="span" className="am-prod-cat" /> : null}
-            {item.volume ? <CmsItemText f="volume" as="span" className="am-prod-vol" /> : null}
-          </div>
-
           <Link href={`/producto/${item.slug}`} className="am-prod-title-link">
             <CmsItemText f="title" as="h3" className="am-prod-title" />
           </Link>
 
+          <div className="am-prod-rating-row">
+            <span className="am-stars-gold" aria-label="Calificación 4.9 de 5">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <Star key={n} size={13} fill="currentColor" />
+              ))}
+            </span>
+            <span className="am-prod-rating-num am-tabular">4.9</span>
+            <span className="am-proof-sep">·</span>
+            {item.category ? <CmsItemText f="category" as="span" className="am-prod-cat" /> : null}
+            {item.brand ? <CmsItemText f="brand" as="span" className="am-sr-only" /> : null}
+            {item.volume ? <CmsItemText f="volume" as="span" className="am-sr-only" /> : null}
+          </div>
+
           {item.subtitle ? <CmsItemText f="subtitle" as="p" className="am-prod-subtitle" /> : null}
           {item.summary ? <CmsItemText f="summary" as="p" className="am-prod-summary" /> : null}
-          <span className="am-sr-only">
-            {item.brand ? <CmsItemText f="brand" as="span" /> : null}
-            {item.ingredientsList ? <CmsItemText f="ingredientsList" as="span" /> : null}
-            {item.howToUse ? <CmsItemText f="howToUse" as="span" /> : null}
-          </span>
+          {item.ingredientsList ? <CmsItemText f="ingredientsList" as="span" className="am-sr-only" /> : null}
+          {item.howToUse ? <CmsItemText f="howToUse" as="span" className="am-sr-only" /> : null}
 
           <div className="am-prod-foot">
-            <div className="am-prod-prices am-tabular">
-              <strong className="am-prod-price">{money(price)}</strong>
-              {compare > price ? <s className="am-prod-compare">{money(compare)}</s> : null}
+            <div className="am-prod-price-row am-tabular">
+              <div className="am-prod-prices">
+                <strong className="am-prod-price">{money(price)}</strong>
+                {compare > price ? <s className="am-prod-compare">{money(compare)}</s> : null}
+              </div>
+              {units > 1 ? (
+                <span className="am-prod-unit-pill">{money(perUnit)} / ud.</span>
+              ) : (
+                <span className="am-prod-unit-muted">Vidrio ámbar</span>
+              )}
             </div>
 
             <button
               type="button"
               onClick={handleAdd}
               disabled={!inStock}
-              className="am-btn am-btn-primary am-prod-add-btn"
+              className={`am-btn ${isBestBundle ? 'am-btn-primary' : 'am-btn-dark-outline'} am-w-full`}
             >
-              <ShoppingBag size={16} />
-              {inStock ? <CmsUiText k="addToCart" fallback="Agregar al ritual" /> : <CmsUiText k="soldOut" fallback="Agotado" />}
+              <ShoppingBag size={17} />
+              {inStock ? (
+                <>
+                  <CmsUiText k="addToCart" fallback="Agregar al ritual" />
+                  <span className="am-cta-divider">·</span>
+                  <span className="am-tabular">{money(price)}</span>
+                </>
+              ) : (
+                <CmsUiText k="soldOut" fallback="Agotado" />
+              )}
             </button>
           </div>
         </div>
@@ -121,8 +168,13 @@ export function ProductCard({ item }: { item: CollectionItem }) {
   );
 }
 
+/* -------------------------------------------------------------------------- */
+/* SECCIÓN DE CATÁLOGO (Home y /tienda)                                       */
+/* -------------------------------------------------------------------------- */
+
 export function ProductsCatalogSection({ section: s }: CmsBlockProps) {
-  const collectionSlug = String(s.data.source || 'productos');
+  const rootRef = useRef<HTMLDivElement>(null);
+  const collectionSlug = String(s.data.collection || 'productos');
   const allItems = useProducts({ collection: collectionSlug });
   const showFilters = Boolean(s.data.showFilters);
   const featuredOnly = Boolean(s.data.featuredOnly);
@@ -132,8 +184,8 @@ export function ProductsCatalogSection({ section: s }: CmsBlockProps) {
 
   const categories = useMemo(() => {
     const set = new Set<string>();
-    allItems.forEach((it) => {
-      if (it.category) set.add(String(it.category));
+    allItems.forEach((i) => {
+      if (i.category) set.add(String(i.category));
     });
     return Array.from(set);
   }, [allItems]);
@@ -151,11 +203,35 @@ export function ProductsCatalogSection({ section: s }: CmsBlockProps) {
     return list;
   }, [allItems, featuredOnly, selectedCat, sortBy]);
 
+  useGSAP(
+    () => {
+      if (!rootRef.current || typeof window === 'undefined') return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const cards = gsap.utils.toArray<HTMLElement>('.am-prod-card', rootRef.current);
+      if (cards.length) {
+        gsap.from(cards, {
+          y: 22,
+          opacity: 0,
+          duration: 0.55,
+          stagger: 0.06,
+          ease: 'power3.out',
+          clearProps: 'transform,opacity',
+          scrollTrigger: {
+            trigger: rootRef.current,
+            start: 'top 90%',
+            once: true,
+          },
+        });
+      }
+    },
+    { scope: rootRef },
+  );
+
   return (
-    <div className="am-section-pad">
+    <div ref={rootRef} className="am-section-pad am-catalog-section">
       <div className="am-container">
         <div className="am-catalog-header">
-          <div>
+          <div className="am-catalog-head-copy">
             <CmsText f="heading" as="h2" className="am-h2" />
             <CmsText f="intro" as="p" className="am-lead" />
           </div>
@@ -241,9 +317,9 @@ export function ProductDetailView({ slug }: { slug: string }) {
       if (!product || typeof window === 'undefined') return;
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       gsap.from('.am-pdp-gallery, .am-pdp-sheet > *', {
-        y: 16,
+        y: 18,
         opacity: 0,
-        duration: 0.55,
+        duration: 0.58,
         stagger: 0.045,
         ease: 'power3.out',
         clearProps: 'transform,opacity',
@@ -329,14 +405,14 @@ export function ProductDetailView({ slug }: { slug: string }) {
             <div className="am-pdp-gallery">
               <div className="am-pdp-main-frame">
                 {activePhotoIdx === 0 ? (
-                  <CmsItemImage f="imageUrl" className="am-pdp-main-img" width={1000} height={1200} />
+                  <CmsItemImage f="imageUrl" className="am-pdp-main-img" width={1000} height={1160} />
                 ) : currentPhoto ? (
                   <img
                     src={mediaUrl(currentPhoto.url, cmsUrl)}
                     alt={currentPhoto.alt || product.title}
                     className="am-pdp-main-img"
                     width={1000}
-                    height={1200}
+                    height={1160}
                   />
                 ) : null}
 
@@ -354,16 +430,33 @@ export function ProductDetailView({ slug }: { slug: string }) {
                       onClick={() => setActivePhotoIdx(idx)}
                       className={`am-pdp-thumb-btn ${idx === activePhotoIdx ? 'is-active' : ''}`}
                     >
-                      <img src={mediaUrl(ph.url, cmsUrl)} alt={ph.alt || `${product.title} ${idx + 1}`} width={96} height={112} />
+                      <img
+                        src={mediaUrl(ph.url, cmsUrl)}
+                        alt={ph.alt || `${product.title} ${idx + 1}`}
+                        width={88}
+                        height={104}
+                      />
                     </button>
                   ))}
                 </div>
               ) : null}
             </div>
 
-            {/* Right Apothecary Detail Column */}
+            {/* Right Apothecary Detail Sheet */}
             <div className="am-pdp-sheet">
               <CmsItemText f="title" as="h1" className="am-pdp-h1" />
+
+              <div className="am-pdp-rating-strip">
+                <span className="am-stars-gold" aria-label="4.9 de 5 estrellas">
+                  {[1, 2, 3, 4, 5].map((n) => (
+                    <Star key={n} size={14} fill="currentColor" />
+                  ))}
+                </span>
+                <strong className="am-tabular">4.9/5</strong>
+                <span className="am-proof-sep">·</span>
+                <span>Fórmula 100 % vegana y libre de aluminio sintético</span>
+              </div>
+
               {product.subtitle ? <CmsItemText f="subtitle" as="p" className="am-pdp-subtitle" /> : null}
 
               <div className="am-pdp-meta-row">
@@ -384,20 +477,36 @@ export function ProductDetailView({ slug }: { slug: string }) {
 
               {product.summary ? <CmsItemText f="summary" as="p" className="am-pdp-summary" multiline /> : null}
 
+              {/* Olfactory & Botanical Note Chips */}
+              <div className="am-pdp-notes-row" aria-label="Perfil sensorial">
+                <span className="am-note-chip">
+                  <Sparkles size={14} /> Piedra de Alumbre pura
+                </span>
+                <span className="am-note-chip">
+                  <Leaf size={14} /> Romero y Menta fresca
+                </span>
+                <span className="am-note-chip">
+                  <Droplets size={14} /> Vitamina E + Omega 6
+                </span>
+              </div>
+
               {/* Presentation switcher across all 3 real SKUs */}
               {allProducts.length > 1 ? (
                 <div className="am-pdp-pack-switcher">
-                  <p className="am-pdp-label">Cambiar presentación:</p>
+                  <p className="am-pdp-label">Elige presentación y ahorra:</p>
                   <div className="am-pdp-pack-pills">
                     {allProducts.map((p) => {
                       const active = p.slug === product.slug;
+                      const pUnits = Number(p.unitsCount || 1);
                       return (
                         <Link
                           key={p.id}
                           href={`/producto/${p.slug}`}
                           className={`am-pack-pill ${active ? 'is-active' : ''}`}
                         >
-                          <span>{p.unitsCount === 3 ? 'Pack x3' : p.unitsCount === 2 ? 'Dúo x2' : 'Individual'}</span>
+                          <span className="am-pack-pill-top">
+                            {pUnits === 3 ? 'Pack x3 · Envío gratis' : pUnits === 2 ? 'Dúo x2 · -5 %' : 'Individual'}
+                          </span>
                           <strong className="am-tabular">{money(Number(p.price || 37000))}</strong>
                         </Link>
                       );
@@ -427,7 +536,11 @@ export function ProductDetailView({ slug }: { slug: string }) {
                       </button>
                     </div>
 
-                    <button type="button" onClick={() => handleAdd(false)} className="am-btn am-btn-primary am-btn-lg am-flex-1">
+                    <button
+                      type="button"
+                      onClick={() => handleAdd(false)}
+                      className="am-btn am-btn-primary am-btn-xl am-flex-1"
+                    >
                       <ShoppingBag size={18} />
                       <CmsUiText k="addToCart" fallback="Agregar al ritual" /> ·{' '}
                       <span className="am-tabular">{money(price * qty)}</span>
@@ -445,12 +558,14 @@ export function ProductDetailView({ slug }: { slug: string }) {
                   </div>
 
                   <button type="button" onClick={() => handleAdd(true)} className="am-btn am-btn-outline am-w-full">
-                    Comprar ahora con Wompi o Contraentrega
+                    Comprar ahora con Wompi o Pago Contraentrega
                   </button>
                 </div>
               ) : (
                 <div className="am-out-of-stock-box">
-                  <p className="am-out-label">Agotado temporalmente. Déjanos tu correo para avisarte cuando salga el nuevo lote:</p>
+                  <p className="am-out-label">
+                    Agotado temporalmente. Déjanos tu correo para avisarte cuando salga el nuevo lote:
+                  </p>
                   <CmsBackInStockForm productId={pid} className="am-bis-form" />
                 </div>
               )}
@@ -458,15 +573,15 @@ export function ProductDetailView({ slug }: { slug: string }) {
               <ul className="am-pdp-trust-list">
                 <li>
                   <ShieldCheck size={18} />
-                  <span>Pagos seguros con Wompi (PSE, Nequi, Tarjetas) o Pago contraentrega</span>
+                  <span>Pagos seguros con Wompi (PSE, Nequi, Tarjetas) o Pago contraentrega en casa</span>
                 </li>
                 <li>
                   <Truck size={18} />
-                  <span>Despacho desde el Valle del Cauca a toda Colombia ($5.000 COP · Gratis desde $95.000)</span>
+                  <span>Despacho rápido a toda Colombia ($5.000 COP · Gratis desde $95.000 COP)</span>
                 </li>
                 <li>
                   <Check size={18} />
-                  <span>100 % vegano, libre de clorhidrato de aluminio, alcohol irritante y parabenos</span>
+                  <span>No mancha camisas blancas ni ropa negra y cuida la piel recién depilada</span>
                 </li>
               </ul>
 
@@ -481,7 +596,7 @@ export function ProductDetailView({ slug }: { slug: string }) {
 
                 {product.howToUse ? (
                   <div className="am-spec-block">
-                    <h3>Ritual de aplicación</h3>
+                    <h3>Ritual de aplicación en 3 segundos</h3>
                     <CmsItemText f="howToUse" as="p" multiline />
                   </div>
                 ) : null}
@@ -506,7 +621,11 @@ export function ProductDetailView({ slug }: { slug: string }) {
                 {product.description ? (
                   <div
                     className="am-spec-block am-richtext"
-                    {...editAttrs({ item: { collection: 'productos', id: product.id }, field: 'description', type: 'richtext' })}
+                    {...editAttrs({
+                      item: { collection: 'productos', id: product.id },
+                      field: 'description',
+                      type: 'richtext',
+                    })}
                     dangerouslySetInnerHTML={{ __html: markdownToHtml(String(product.description)) }}
                   />
                 ) : null}
@@ -516,14 +635,28 @@ export function ProductDetailView({ slug }: { slug: string }) {
 
           {/* Verified Reviews */}
           <div className="am-pdp-reviews-wrap">
-            <h2 className="am-h2">Experiencias verificadas</h2>
+            <div className="am-reviews-header">
+              <div>
+                <span className="am-kicker">Comunidad Alma Mineral</span>
+                <h2 className="am-h2">Experiencias verificadas</h2>
+              </div>
+              <div className="am-reviews-score-pill">
+                <span className="am-stars-gold">
+                  {[1, 2, 3, 4, 5].map((n) => (
+                    <Star key={n} size={15} fill="currentColor" />
+                  ))}
+                </span>
+                <strong className="am-tabular">4.9 / 5.0</strong>
+              </div>
+            </div>
             <ApothecaryReviews productId={pid} />
           </div>
 
           {/* Related Presentations */}
           {otherRituals.length > 0 ? (
             <div className="am-pdp-related">
-              <h2 className="am-h2">Otras presentaciones del ritual</h2>
+              <span className="am-kicker">Ahorra en packs</span>
+              <h2 className="am-h2 am-mb-md">Otras presentaciones del ritual</h2>
               <div className="am-prod-grid">
                 {otherRituals.slice(0, 2).map((it) => (
                   <ProductCard key={it.id} item={it} />
@@ -598,7 +731,7 @@ function ApothecaryReviews({ productId }: { productId: string }) {
 
       <form onSubmit={handleSubmit} className="am-review-form">
         <div className="am-rating-picker" role="radiogroup" aria-label="Calificación">
-          <span className="am-pdp-label">Tu calificación:</span>
+          <span className="am-pdp-label">Califica tu experiencia:</span>
           <div className="am-rating-btns">
             {[1, 2, 3, 4, 5].map((n) => (
               <button
