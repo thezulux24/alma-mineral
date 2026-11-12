@@ -1,6 +1,6 @@
 {
   "$schema": "https://cms-studio.latinovation.com/schemas/project-snapshot-v1.json",
-  "pulledAt": "2026-11-12T00:42:34.910Z",
+  "pulledAt": "2026-11-12T01:02:10.073Z",
   "project": {
     "id": "cmwckqt8v00jnjx6fhxpgnwie",
     "name": "Alma Mineral",
@@ -11,7 +11,7 @@
     "productionUrl": "https://tualmamineral.com",
     "previewUrl": "https://tualmamineral.com",
     "publicApiKey": "ltn_pub_almamineral_e500b4dc35",
-    "lastPublishedAt": "2026-11-12T00:38:07.428Z"
+    "lastPublishedAt": "2026-11-12T01:02:09.222Z"
   },
   "tenant": {
     "id": "cmwckqt8g00jkjx6fvg9gbv0s",
@@ -88,20 +88,20 @@
           "label": "Red",
           "options": [
             {
-              "value": "instagram",
-              "label": "instagram"
+              "label": "instagram",
+              "value": "instagram"
             },
             {
-              "value": "tiktok",
-              "label": "tiktok"
+              "label": "tiktok",
+              "value": "tiktok"
             },
             {
-              "value": "facebook",
-              "label": "facebook"
+              "label": "facebook",
+              "value": "facebook"
             },
             {
-              "value": "youtube",
-              "label": "youtube"
+              "label": "youtube",
+              "value": "youtube"
             }
           ]
         },
@@ -163,20 +163,20 @@
     "city": "Valle del Cauca, Colombia",
     "site": {
       "notFound": {
-        "title": "Esta página no hace parte de la botica.",
         "body": "Es posible que el enlace haya cambiado tras el rediseño. Vuelve al inicio o explora nuestras presentaciones.",
-        "ctaLabel": "Ir a la tienda",
-        "ctaHref": "/tienda"
+        "title": "Esta página no hace parte de la botica.",
+        "ctaHref": "/tienda",
+        "ctaLabel": "Ir a la tienda"
       },
       "cookieBanner": {
-        "enabled": true,
         "text": "Usamos cookies esenciales para tu bolsa de compras y medición anónima de pedidos.",
+        "enabled": true,
         "acceptLabel": "Aceptar",
         "rejectLabel": "Solo esenciales"
       },
       "whatsappOrders": {
-        "enabled": false,
-        "cart": false
+        "cart": false,
+        "enabled": false
       }
     },
     "email": "almamineral.co@gmail.com",
@@ -184,19 +184,19 @@
     "phone": "+57 300 000 0000",
     "social": [
       {
-        "network": "instagram",
+        "url": "https://www.instagram.com/almamineral.co",
         "label": "Instagram @almamineral.co",
-        "url": "https://www.instagram.com/almamineral.co"
+        "network": "instagram"
       },
       {
-        "network": "tiktok",
+        "url": "https://www.tiktok.com/@almamineral.co",
         "label": "TikTok @almamineral.co",
-        "url": "https://www.tiktok.com/@almamineral.co"
+        "network": "tiktok"
       },
       {
-        "network": "facebook",
+        "url": "https://www.facebook.com/share/15jRJCEUTN/",
         "label": "Facebook Alma Mineral",
-        "url": "https://www.facebook.com/share/15jRJCEUTN/"
+        "network": "facebook"
       }
     ],
     "logoUrl": "/uploads/media/alma-mineral-logo-1794429194512-rq60.webp",
@@ -206,23 +206,19 @@
     "faviconUrl": "/uploads/media/alma-mineral-isotipo-1794429195299-zu99.webp",
     "cartFreeDone": "Tu pedido ya incluye envío nacional gratis",
     "designSystem": {
-      "version": 2,
       "name": "Atelier Botánico de Lujo · Alma Mineral",
-      "themeMode": "light",
+      "shape": {
+        "radiusLg": 22,
+        "radiusMd": 14,
+        "radiusSm": 8,
+        "radiusFull": 999,
+        "borderWidth": 1
+      },
       "colors": {
-        "background": "#F2F4F1",
-        "surface": "#FFFFFF",
-        "surfaceAlt": "#E6EAE4",
         "text": "#121814",
         "muted": "#4A544D",
-        "border": "#D6DDD4",
-        "primary": "#14261B",
-        "primaryText": "#FAF8F5",
-        "secondary": "#6B4226",
-        "secondaryText": "#FAF8F5",
         "accent": "#6E5015",
-        "success": "#1B6B3E",
-        "danger": "#A62B22",
+        "border": "#D6DDD4",
         "custom": [
           {
             "name": "Oro Ámbar Cepillado",
@@ -236,19 +232,56 @@
             "name": "Piedra Caliza",
             "value": "#EAE8E2"
           }
-        ]
+        ],
+        "danger": "#A62B22",
+        "primary": "#14261B",
+        "success": "#1B6B3E",
+        "surface": "#FFFFFF",
+        "secondary": "#6B4226",
+        "background": "#F2F4F1",
+        "surfaceAlt": "#E6EAE4",
+        "primaryText": "#FAF8F5",
+        "secondaryText": "#FAF8F5"
       },
+      "footer": {
+        "variant": "split",
+        "showNewsletter": false
+      },
+      "header": {
+        "sticky": true,
+        "variant": "simple",
+        "showCart": true,
+        "showSearch": false,
+        "transparentOnHero": false
+      },
+      "motion": {
+        "level": "expressive",
+        "durationMs": 280
+      },
+      "shadow": {
+        "lg": "0 28px 64px -20px rgb(18 24 20 / 0.22)",
+        "md": "0 16px 36px -14px rgb(18 24 20 / 0.12)",
+        "sm": "0 2px 8px -2px rgb(18 24 20 / 0.05)"
+      },
+      "buttons": {
+        "case": "none",
+        "shape": "rounded",
+        "style": "solid",
+        "weight": 600,
+        "paddingX": 26,
+        "paddingY": 15
+      },
+      "spacing": {
+        "gutter": 24,
+        "maxWidth": 1360,
+        "sectionY": 104,
+        "sectionYMobile": 64
+      },
+      "version": 2,
+      "globalCss": "",
+      "themeMode": "light",
       "typography": {
-        "headingFont": {
-          "family": "Cormorant Garamond",
-          "source": "google",
-          "weights": [
-            500,
-            600,
-            700
-          ],
-          "category": "serif"
-        },
+        "baseSize": 16,
         "bodyFont": {
           "family": "Plus Jakarta Sans",
           "source": "google",
@@ -260,56 +293,23 @@
           ],
           "category": "sans-serif"
         },
-        "baseSize": 16,
-        "scaleRatio": 1.28,
-        "headingWeight": 600,
         "bodyWeight": 400,
+        "scaleRatio": 1.28,
         "headingCase": "none",
-        "headingTracking": -0.02,
-        "bodyLineHeight": 1.6
-      },
-      "shape": {
-        "radiusSm": 8,
-        "radiusMd": 14,
-        "radiusLg": 22,
-        "radiusFull": 999,
-        "borderWidth": 1
-      },
-      "shadow": {
-        "sm": "0 2px 8px -2px rgb(18 24 20 / 0.05)",
-        "md": "0 16px 36px -14px rgb(18 24 20 / 0.12)",
-        "lg": "0 28px 64px -20px rgb(18 24 20 / 0.22)"
-      },
-      "spacing": {
-        "sectionY": 104,
-        "sectionYMobile": 64,
-        "gutter": 24,
-        "maxWidth": 1360
-      },
-      "buttons": {
-        "style": "solid",
-        "shape": "rounded",
-        "case": "none",
-        "weight": 600,
-        "paddingY": 15,
-        "paddingX": 26
-      },
-      "motion": {
-        "level": "expressive",
-        "durationMs": 280
-      },
-      "header": {
-        "variant": "simple",
-        "sticky": true,
-        "transparentOnHero": false,
-        "showSearch": false,
-        "showCart": true
-      },
-      "footer": {
-        "variant": "split",
-        "showNewsletter": false
-      },
-      "globalCss": ""
+        "headingFont": {
+          "family": "Cormorant Garamond",
+          "source": "google",
+          "weights": [
+            500,
+            600,
+            700
+          ],
+          "category": "serif"
+        },
+        "headingWeight": 600,
+        "bodyLineHeight": 1.6,
+        "headingTracking": -0.02
+      }
     },
     "dispatchNote": "Despachos a toda Colombia · Wompi y Contraentrega",
     "footerPhotoUrl": "/uploads/media/alma-mineral-trio-ambar-estudio-1794429199176-rc7l.webp",
@@ -322,160 +322,156 @@
     "footerContactHeading": "Botica y atención"
   },
   "seoConfig": {
-    "metaTitle": "Alma Mineral · Desodorante Natural de Piedra de Alumbre en Colombia",
-    "metaDescription": "Desodorante natural en spray con Piedra de Alumbre, Neem, Romero, Menta, Vitamina E y Omega 6. Libre de clorhidrato de aluminio. Envíos a toda Colombia, pagos Wompi y contraentrega.",
     "ogImage": "/uploads/media/alma-mineral-trio-ambar-estudio-1794429199176-rc7l.webp",
-    "robotsIndex": true
+    "metaTitle": "Alma Mineral · Desodorante Natural de Piedra de Alumbre en Colombia",
+    "robotsIndex": true,
+    "metaDescription": "Desodorante natural en spray con Piedra de Alumbre, Neem, Romero, Menta, Vitamina E y Omega 6. Libre de clorhidrato de aluminio. Envíos a toda Colombia, pagos Wompi y contraentrega."
   },
   "navigationConfig": {
-    "headerLinks": [
-      {
-        "id": "nav-tienda",
-        "label": "Tienda",
-        "href": "/tienda",
-        "isVisible": true
-      },
-      {
-        "id": "nav-ciencia",
-        "label": "Ciencia mineral",
-        "href": "/ciencia-mineral",
-        "isVisible": true
-      },
-      {
-        "id": "nav-historia",
-        "label": "Nuestra historia",
-        "href": "/nuestra-historia",
-        "isVisible": true
-      },
-      {
-        "id": "nav-rastreo",
-        "label": "Rastrear pedido",
-        "href": "/rastreo",
-        "isVisible": true
-      },
-      {
-        "id": "nav-contacto",
-        "label": "Contacto",
-        "href": "/contacto",
-        "isVisible": true
-      }
-    ],
-    "headerCtaText": "Pedir ahora",
-    "headerCtaHref": "/tienda",
     "footerLinks": [
       {
         "id": "ft-tienda",
-        "label": "Tienda y packs",
         "href": "/tienda",
+        "label": "Tienda y packs",
         "isVisible": true
       },
       {
         "id": "ft-ciencia",
-        "label": "El poro libre",
         "href": "/ciencia-mineral",
+        "label": "El poro libre",
         "isVisible": true
       },
       {
         "id": "ft-historia",
-        "label": "Nuestra historia",
         "href": "/nuestra-historia",
+        "label": "Nuestra historia",
         "isVisible": true
       },
       {
         "id": "ft-rastreo",
-        "label": "Rastrear pedido",
         "href": "/rastreo",
+        "label": "Rastrear pedido",
         "isVisible": true
       },
       {
         "id": "ft-cuenta",
-        "label": "Mi cuenta",
         "href": "/cuenta",
+        "label": "Mi cuenta",
         "isVisible": true
       },
       {
         "id": "ft-contacto",
-        "label": "Contacto y mayoristas",
         "href": "/contacto",
+        "label": "Contacto y mayoristas",
         "isVisible": true
       },
       {
         "id": "ft-privacidad",
-        "label": "Privacidad y garantías",
         "href": "/privacidad",
+        "label": "Privacidad y garantías",
         "isVisible": true
       }
-    ]
+    ],
+    "headerLinks": [
+      {
+        "id": "nav-tienda",
+        "href": "/tienda",
+        "label": "Tienda",
+        "isVisible": true
+      },
+      {
+        "id": "nav-ciencia",
+        "href": "/ciencia-mineral",
+        "label": "Ciencia mineral",
+        "isVisible": true
+      },
+      {
+        "id": "nav-historia",
+        "href": "/nuestra-historia",
+        "label": "Nuestra historia",
+        "isVisible": true
+      },
+      {
+        "id": "nav-rastreo",
+        "href": "/rastreo",
+        "label": "Rastrear pedido",
+        "isVisible": true
+      },
+      {
+        "id": "nav-contacto",
+        "href": "/contacto",
+        "label": "Contacto",
+        "isVisible": true
+      }
+    ],
+    "headerCtaHref": "/tienda",
+    "headerCtaText": "Pedir ahora"
   },
-  "redirects": [
-    {
-      "from": "/catalogo",
-      "to": "/tienda",
-      "permanent": true
-    },
-    {
-      "from": "/shop",
-      "to": "/tienda",
-      "permanent": true
-    },
-    {
-      "from": "/product/desodorante-natural-alma-mineral",
-      "to": "/producto/desodorante-natural-alma-mineral",
-      "permanent": true
-    },
-    {
-      "from": "/privacy-policy",
-      "to": "/privacidad",
-      "permanent": true
-    },
-    {
-      "from": "/refund_returns",
-      "to": "/privacidad",
-      "permanent": true
-    },
-    {
-      "from": "/delivery",
-      "to": "/privacidad",
-      "permanent": true
-    },
-    {
-      "from": "/faq",
-      "to": "/#cms-section-preguntas",
-      "permanent": true
-    },
-    {
-      "from": "/our-difference",
-      "to": "/ciencia-mineral",
-      "permanent": true
-    }
-  ],
+  "redirects": [],
   "domains": [],
   "pages": [
     {
-      "order": 0,
       "title": "Inicio",
       "slug": "/",
       "description": "Escenario principal de la botica Alma Mineral",
       "seoTitle": "Alma Mineral · Desodorante Natural de Piedra de Alumbre y Aceites Esenciales",
-      "seoDescription": "Desodorante natural en spray elaborado en Colombia con Piedra de Alumbre, Neem, Romero, Menta, Vitamina E y Omega 6. Sin clorhidrato de aluminio. Envíos a todo el país.",
       "seoImage": "/uploads/media/alma-mineral-trio-ambar-estudio-1794429199176-rc7l.webp",
+      "order": 0,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "hero_escenario",
-          "name": "Escenario partido: carta de botica y fotografía fija",
+          "name": "Escenario cinemático con tipografía en movimiento y aparición del frasco",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
               "key": "headline",
               "type": "text",
-              "label": "Titular principal (máx. 2 líneas)"
+              "label": "Titular principal de apertura"
             },
             {
               "key": "subheadline",
               "type": "textarea",
-              "label": "Descripción de la fórmula"
+              "label": "Descripción breve de la fórmula"
+            },
+            {
+              "key": "scrollCue",
+              "type": "text",
+              "label": "Indicador de desplazamiento"
+            },
+            {
+              "key": "manifestoLine1",
+              "type": "text",
+              "label": "Frase cinemática 1 al bajar"
+            },
+            {
+              "key": "manifestoLine2",
+              "type": "text",
+              "label": "Frase cinemática 2 al bajar (acento dorado)"
+            },
+            {
+              "key": "manifestoLine3",
+              "type": "text",
+              "label": "Frase cinemática 3 al bajar"
+            },
+            {
+              "key": "callouts",
+              "type": "array",
+              "label": "Puntos anatómicos que rodean el frasco",
+              "fields": [
+                {
+                  "key": "title",
+                  "type": "text",
+                  "label": "Activo o beneficio clave"
+                },
+                {
+                  "key": "detail",
+                  "type": "text",
+                  "label": "Explicación breve"
+                }
+              ]
             },
             {
               "key": "ritualLabel",
@@ -495,7 +491,7 @@
             {
               "key": "bottleCutout",
               "type": "image",
-              "label": "Frasco recortado con paralaje"
+              "label": "Frasco recortado transparente (protagonista en scroll)"
             },
             {
               "key": "bottleCutoutAlt",
@@ -505,7 +501,7 @@
             {
               "key": "stageSlides",
               "type": "array",
-              "label": "Fotografías del escenario fijo (fundido cruzado)",
+              "label": "Fotografías de atmósfera tras el frasco",
               "fields": [
                 {
                   "key": "image",
@@ -527,56 +523,223 @@
             {
               "key": "barLeft",
               "type": "text",
-              "label": "Barra inferior de la foto: origen"
+              "label": "Sello inferior izquierdo: origen"
             },
             {
               "key": "barRight",
               "type": "text",
-              "label": "Barra inferior de la foto: envíos y pagos"
+              "label": "Sello inferior derecho: envíos y pagos"
             }
           ],
           "data": {
+            "barLeft": "Botica en Valle del Cauca · Fórmula 100 % vegana",
+            "barRight": "Envío nacional $5.000 COP · Wompi y Contraentrega",
+            "callouts": [
+              {
+                "title": "Piedra de Alumbre",
+                "detail": "Cristal antibacteriano que neutraliza el olor en superficie"
+              },
+              {
+                "title": "Aceite de Neem",
+                "detail": "Purificación fitoterapéutica activa para jornadas intensas"
+              },
+              {
+                "title": "Romero y Menta",
+                "detail": "Frescura herbal limpia que respeta tu perfume diario"
+              },
+              {
+                "title": "Vitamina E y Omega 6",
+                "detail": "Calma tras el afeitado y unifica el tono natural axilar"
+              }
+            ],
             "headline": "Tu piel respira libre.",
-            "subheadline": "Desodorante natural en vidrio ámbar con Piedra de Alumbre, Neem, Romero, Menta, Vitamina E y Omega 6. Neutraliza el mal olor todo el día sin clorhidrato de aluminio ni manchas en tu ropa.",
-            "ritualLabel": "Elige tu presentación para agregar al carrito",
-            "buyButtonLabel": "Agregar al ritual",
+            "scrollCue": "Desliza para descubrir el ritual",
             "primaryCta": {
-              "label": "Ver detalles en la tienda",
-              "href": "/tienda"
+              "href": "/tienda",
+              "label": "Explorar catálogo completo"
             },
-            "bottleCutout": "/uploads/media/alma-mineral-frasco-ambar-recorte-1794429197188-0k5b.webp",
-            "bottleCutoutAlt": "Frasco en vidrio ámbar del Desodorante Natural Alma Mineral con atomizador blanco",
+            "ritualLabel": "Selecciona tu presentación Alma Mineral",
             "stageSlides": [
               {
                 "image": "/uploads/media/alma-mineral-trio-ambar-estudio-1794429199176-rc7l.webp",
-                "imageAlt": "Tres frascos de vidrio ámbar de Desodorante Natural Alma Mineral en luz cálida de botica",
-                "caption": "Vidrio ámbar que protege los extractos botánicos de la luz"
+                "caption": "Vidrio ámbar farmacéutico que protege los activos botánicos",
+                "imageAlt": "Tres frascos de vidrio ámbar de Desodorante Natural Alma Mineral en luz cálida de botica"
               },
               {
                 "image": "/uploads/media/alma-mineral-ritual-piedra-pizarra-1794429205629-ohwr.webp",
-                "imageAlt": "Desodorante Alma Mineral sobre mesón de piedra pizarra oscura junto a toallas de algodón blanco",
-                "caption": "Textura acuosa limpia sobre piel recién duchada"
+                "caption": "Bruma acuosa transparente: cero manchas en ropa blanca o negra",
+                "imageAlt": "Desodorante Alma Mineral sobre mesón de piedra pizarra oscura junto a toallas de algodón blanco"
               },
               {
                 "image": "/uploads/media/alma-mineral-deporte-frescura-1794429209727-rxnt.webp",
-                "imageAlt": "Protección mineral para entrenamiento y días activos con Alma Mineral",
-                "caption": "Protección real en días de entrenamiento y calor intenso"
+                "caption": "Eficacia comprobada en movimiento y clima cálido",
+                "imageAlt": "Protección mineral para entrenamiento y días activos con Alma Mineral"
               },
               {
                 "image": "/uploads/media/alma-mineral-ritual-travertino-1794429206736-sh3h.webp",
-                "imageAlt": "Frasco ámbar de Alma Mineral sobre piedra travertino cálida en baño de luz natural",
-                "caption": "Elaborado en el Valle del Cauca, Colombia"
+                "caption": "Formulado artesanalmente en el Valle del Cauca, Colombia",
+                "imageAlt": "Frasco ámbar de Alma Mineral sobre piedra travertino cálida en baño de luz natural"
               }
             ],
-            "barLeft": "Botica en Valle del Cauca · Fórmula 100 % vegana",
-            "barRight": "Envío nacional $5.000 COP · Pagos Wompi o Contraentrega"
+            "subheadline": "Desodorante botánico-mineral en vidrio ámbar elaborado en Colombia con Piedra de Alumbre y aceites esenciales puros.",
+            "bottleCutout": "/uploads/media/alma-mineral-frasco-ambar-recorte-1794429197188-0k5b.webp",
+            "buyButtonLabel": "Agregar al ritual",
+            "manifestoLine1": "Sin aluminio sintético.",
+            "manifestoLine2": "Sin obstruir tus poros.",
+            "manifestoLine3": "Veinticuatro horas de pureza mineral.",
+            "bottleCutoutAlt": "Frasco en vidrio ámbar del Desodorante Natural Alma Mineral con atomizador blanco"
           }
         },
         {
+          "key": "rituales_catalogo",
+          "name": "Presentaciones y packs rituales",
+          "description": "",
           "order": 1,
+          "isVisible": true,
+          "schema": [
+            {
+              "key": "heading",
+              "type": "text",
+              "label": "Título"
+            },
+            {
+              "key": "intro",
+              "type": "textarea",
+              "label": "Introducción"
+            },
+            {
+              "key": "source",
+              "type": "collection",
+              "label": "Colección de productos",
+              "required": true,
+              "collectionHint": "productos"
+            },
+            {
+              "key": "showFilters",
+              "type": "boolean",
+              "label": "Mostrar filtros por categoría"
+            },
+            {
+              "key": "columns",
+              "type": "select",
+              "label": "Columnas",
+              "options": [
+                {
+                  "label": "2",
+                  "value": "2"
+                },
+                {
+                  "label": "3",
+                  "value": "3"
+                },
+                {
+                  "label": "4",
+                  "value": "4"
+                }
+              ]
+            },
+            {
+              "key": "featuredOnly",
+              "type": "boolean",
+              "label": "Solo productos destacados"
+            },
+            {
+              "key": "paginate",
+              "type": "boolean",
+              "label": "Paginar resultados"
+            },
+            {
+              "key": "pageSize",
+              "max": 60,
+              "min": 0,
+              "help": "0 usa el valor de la colección (12 si no tiene).",
+              "type": "number",
+              "label": "Elementos por página"
+            },
+            {
+              "key": "showSort",
+              "type": "boolean",
+              "label": "Permitir ordenar"
+            },
+            {
+              "key": "showSearch",
+              "type": "boolean",
+              "label": "Mostrar buscador"
+            },
+            {
+              "key": "whatsappOrder",
+              "help": "Requiere activar los pedidos por WhatsApp en Ajustes → WhatsApp.",
+              "type": "boolean",
+              "label": "Botón «Pedir por WhatsApp» en cada producto"
+            },
+            {
+              "key": "showRatings",
+              "type": "boolean",
+              "label": "Mostrar estrellas de las reseñas"
+            },
+            {
+              "key": "showWishlist",
+              "type": "boolean",
+              "label": "Mostrar botón de favoritos (corazón)"
+            },
+            {
+              "key": "moreLink",
+              "type": "link",
+              "label": "Enlace \"ver todo\" (opcional)"
+            },
+            {
+              "key": "tone",
+              "type": "select",
+              "group": "style",
+              "label": "Fondo de la sección",
+              "options": [
+                {
+                  "label": "Fondo principal",
+                  "value": "default"
+                },
+                {
+                  "label": "Fondo alterno",
+                  "value": "alt"
+                },
+                {
+                  "label": "Invertido (oscuro sobre claro o viceversa)",
+                  "value": "inverse"
+                },
+                {
+                  "label": "Color de acento",
+                  "value": "accent"
+                }
+              ]
+            },
+            {
+              "key": "anchor",
+              "help": "Permite enlazar esta sección con #ancla desde el menú.",
+              "type": "text",
+              "group": "style",
+              "label": "Ancla para enlaces (#)",
+              "placeholder": "contacto"
+            }
+          ],
+          "data": {
+            "tone": "default",
+            "intro": "Una única fórmula magistral en tres presentaciones: frasco individual para iniciar tu transición, dúo para compartir y reserva de tres frascos con envío gratis en toda Colombia.",
+            "_block": "products.catalog",
+            "source": "productos",
+            "columns": "3",
+            "heading": "Elige tu reserva mineral.",
+            "moreLink": {
+              "href": "/tienda",
+              "label": "Explorar toda la tienda"
+            },
+            "showFilters": false,
+            "featuredOnly": false
+          }
+        },
+        {
           "key": "ciencia_poro",
           "name": "Comparador molecular del poro",
           "description": "",
+          "order": 2,
           "isVisible": true,
           "schema": [
             {
@@ -665,11 +828,13 @@
             }
           ],
           "data": {
-            "heading": "Proteger sin tapar poros.",
+            "cta": {
+              "href": "/ciencia-mineral",
+              "label": "Leer la guía completa de transición"
+            },
             "intro": "El sudor sano regula tu temperatura y casi no tiene olor. El mal olor aparece cuando las bacterias de la superficie lo descomponen. Cambia entre ambos mecanismos para ver qué ocurre dentro del poro.",
-            "alumTabLabel": "Piedra de Alumbre · Poro libre",
+            "heading": "Proteger sin tapar poros.",
             "alumTitle": "Escudo mineral en superficie",
-            "alumSummary": "El Potassium Alum tiene una estructura cristalina de gran peso molecular que permanece sobre la epidermis. Neutraliza las bacterias del mal olor mientras el conducto sudoríparo respira con libertad.",
             "alumPoints": [
               {
                 "text": "No atraviesa la barrera cutánea ni bloquea los ganglios axilares."
@@ -681,10 +846,8 @@
                 "text": "Con Vitamina E y Omega 6 que calman y unifican el tono natural de la piel."
               }
             ],
-            "alumMoleculeLabel": "Cristal Potassium Alum · Acción superficial",
-            "synthTabLabel": "Antitranspirante · Conducto tapado",
             "synthTitle": "Tapón químico dentro del conducto",
-            "synthSummary": "Las sales sintéticas como el clorhidrato de aluminio reaccionan con la humedad formando un gel que obstruye físicamente la salida natural del sudor.",
+            "alumSummary": "El Potassium Alum tiene una estructura cristalina de gran peso molecular que permanece sobre la epidermis. Neutraliza las bacterias del mal olor mientras el conducto sudoríparo respira con libertad.",
             "synthPoints": [
               {
                 "text": "Altera el equilibrio de la microbiota axilar y puede sensibilizar la piel tras el afeitado."
@@ -696,19 +859,19 @@
                 "text": "Al suspenderlo, el cuerpo suele requerir algunos días para liberar los poros obstruidos."
               }
             ],
-            "synthMoleculeLabel": "Clorhidrato de aluminio · Gel oclusivo",
+            "alumTabLabel": "Piedra de Alumbre · Poro libre",
+            "synthSummary": "Las sales sintéticas como el clorhidrato de aluminio reaccionan con la humedad formando un gel que obstruye físicamente la salida natural del sudor.",
+            "synthTabLabel": "Antitranspirante · Conducto tapado",
             "diagramCaption": "Diagrama interactivo de acción epidérmica: selecciona cada modo para observar el poro.",
-            "cta": {
-              "label": "Leer la guía completa de transición",
-              "href": "/ciencia-mineral"
-            }
+            "alumMoleculeLabel": "Cristal Potassium Alum · Acción superficial",
+            "synthMoleculeLabel": "Clorhidrato de aluminio · Gel oclusivo"
           }
         },
         {
-          "order": 2,
           "key": "herbario_mineral",
           "name": "Herbario fijo: los 7 ingredientes de la fórmula",
           "description": "",
+          "order": 3,
           "isVisible": true,
           "schema": [
             {
@@ -772,16 +935,12 @@
             }
           ],
           "data": {
+            "lead": "Cada atomización une un cristal mineral antibacteriano con aceites esenciales puros y lípidos reparadores. Cero rellenos sintéticos, alcohol irritante o parabenos.",
             "heading": "Siete activos puros.",
-            "lead": "Cada gota combina un cristal mineral antibacteriano con aceites esenciales y lípidos reparadores. Sin rellenos sintéticos, alcohol irritante ni parabenos.",
-            "pinnedBottle": "/uploads/media/alma-mineral-frasco-ambar-recorte-1794429197188-0k5b.webp",
-            "pinnedBottleAlt": "Frasco en vidrio ámbar del Desodorante Natural Alma Mineral con atomizador blanco",
             "chapters": [
               {
-                "title": "Piedra de Alumbre (Potassium Alum)",
                 "role": "Escudo mineral antibacteriano de superficie",
                 "image": "/uploads/media/alma-mineral-ritual-travertino-1794429206736-sh3h.webp",
-                "imageAlt": "Frasco ámbar de Alma Mineral sobre piedra travertino cálida en baño de luz natural",
                 "notes": [
                   {
                     "line": "Sal mineral natural que frena la proliferación bacteriana causante del olor."
@@ -792,13 +951,13 @@
                   {
                     "line": "Mantiene la transpiración saludable sin sensación pegajosa."
                   }
-                ]
+                ],
+                "title": "Piedra de Alumbre (Potassium Alum)",
+                "imageAlt": "Frasco ámbar de Alma Mineral sobre piedra travertino cálida en baño de luz natural"
               },
               {
-                "title": "Aceite Esencial de Neem",
                 "role": "Purificación botánica de larga duración",
                 "image": "/uploads/media/alma-mineral-ritual-piedra-pizarra-1794429205629-ohwr.webp",
-                "imageAlt": "Desodorante Alma Mineral sobre mesón de piedra pizarra oscura junto a toallas de algodón blanco",
                 "notes": [
                   {
                     "line": "Reconocido en fitoterapia tradicional por su acción purificante natural."
@@ -809,13 +968,13 @@
                   {
                     "line": "Cuida la barrera cutánea sin resecar la zona axilar."
                   }
-                ]
+                ],
+                "title": "Aceite Esencial de Neem",
+                "imageAlt": "Desodorante Alma Mineral sobre mesón de piedra pizarra oscura junto a toallas de algodón blanco"
               },
               {
-                "title": "Esencias de Romero y Menta",
                 "role": "Frescura limpia y tonificación herbal",
                 "image": "/uploads/media/alma-mineral-deporte-frescura-1794429209727-rxnt.webp",
-                "imageAlt": "Protección mineral para entrenamiento y días activos con Alma Mineral",
                 "notes": [
                   {
                     "line": "Sensación fresca inmediata al atomizar después del baño o del deporte."
@@ -826,13 +985,13 @@
                   {
                     "line": "El romero aporta antioxidantes naturales que revitalizan la piel."
                   }
-                ]
+                ],
+                "title": "Esencias de Romero y Menta",
+                "imageAlt": "Protección mineral para entrenamiento y días activos con Alma Mineral"
               },
               {
-                "title": "Vitamina E y Omega 6",
                 "role": "Calma posdepilación, tono uniforme y pH equilibrado",
                 "image": "/uploads/media/alma-mineral-cuidado-piel-sensible-1794429211797-grcv.webp",
-                "imageAlt": "Cuidado suave para la piel sensible de las axilas con piedra de alumbre y vitamina E",
                 "notes": [
                   {
                     "line": "La Vitamina E y el Omega 6 nutren y suavizan la piel sensible o recién afeitada."
@@ -843,161 +1002,20 @@
                   {
                     "line": "El cloruro de sodio purificado estabiliza el pH fisiológico de la fórmula."
                   }
-                ]
+                ],
+                "title": "Vitamina E y Omega 6",
+                "imageAlt": "Cuidado suave para la piel sensible de las axilas con piedra de alumbre y vitamina E"
               }
-            ]
+            ],
+            "pinnedBottle": "/uploads/media/alma-mineral-frasco-ambar-recorte-1794429197188-0k5b.webp",
+            "pinnedBottleAlt": "Frasco en vidrio ámbar del Desodorante Natural Alma Mineral con atomizador blanco"
           }
         },
         {
-          "order": 3,
-          "key": "rituales_catalogo",
-          "name": "Presentaciones y packs rituales",
-          "description": "",
-          "isVisible": true,
-          "schema": [
-            {
-              "key": "heading",
-              "type": "text",
-              "label": "Título"
-            },
-            {
-              "key": "intro",
-              "type": "textarea",
-              "label": "Introducción"
-            },
-            {
-              "key": "source",
-              "type": "collection",
-              "label": "Colección de productos",
-              "required": true,
-              "collectionHint": "productos"
-            },
-            {
-              "key": "showFilters",
-              "type": "boolean",
-              "label": "Mostrar filtros por categoría"
-            },
-            {
-              "key": "columns",
-              "type": "select",
-              "label": "Columnas",
-              "options": [
-                {
-                  "value": "2",
-                  "label": "2"
-                },
-                {
-                  "value": "3",
-                  "label": "3"
-                },
-                {
-                  "value": "4",
-                  "label": "4"
-                }
-              ]
-            },
-            {
-              "key": "featuredOnly",
-              "type": "boolean",
-              "label": "Solo productos destacados"
-            },
-            {
-              "key": "paginate",
-              "type": "boolean",
-              "label": "Paginar resultados"
-            },
-            {
-              "key": "pageSize",
-              "type": "number",
-              "label": "Elementos por página",
-              "min": 0,
-              "max": 60,
-              "help": "0 usa el valor de la colección (12 si no tiene)."
-            },
-            {
-              "key": "showSort",
-              "type": "boolean",
-              "label": "Permitir ordenar"
-            },
-            {
-              "key": "showSearch",
-              "type": "boolean",
-              "label": "Mostrar buscador"
-            },
-            {
-              "key": "whatsappOrder",
-              "type": "boolean",
-              "label": "Botón «Pedir por WhatsApp» en cada producto",
-              "help": "Requiere activar los pedidos por WhatsApp en Ajustes → WhatsApp."
-            },
-            {
-              "key": "showRatings",
-              "type": "boolean",
-              "label": "Mostrar estrellas de las reseñas"
-            },
-            {
-              "key": "showWishlist",
-              "type": "boolean",
-              "label": "Mostrar botón de favoritos (corazón)"
-            },
-            {
-              "key": "moreLink",
-              "type": "link",
-              "label": "Enlace \"ver todo\" (opcional)"
-            },
-            {
-              "key": "tone",
-              "type": "select",
-              "label": "Fondo de la sección",
-              "options": [
-                {
-                  "value": "default",
-                  "label": "Fondo principal"
-                },
-                {
-                  "value": "alt",
-                  "label": "Fondo alterno"
-                },
-                {
-                  "value": "inverse",
-                  "label": "Invertido (oscuro sobre claro o viceversa)"
-                },
-                {
-                  "value": "accent",
-                  "label": "Color de acento"
-                }
-              ],
-              "group": "style"
-            },
-            {
-              "key": "anchor",
-              "type": "text",
-              "label": "Ancla para enlaces (#)",
-              "group": "style",
-              "placeholder": "contacto",
-              "help": "Permite enlazar esta sección con #ancla desde el menú."
-            }
-          ],
-          "data": {
-            "_block": "products.catalog",
-            "heading": "Elige tu reserva mineral.",
-            "intro": "Una única fórmula honesta en tres presentaciones: frasco individual para empezar, dúo para compartir o llevar al gimnasio, y pack de tres con envío gratis a toda Colombia.",
-            "source": "productos",
-            "showFilters": false,
-            "columns": "3",
-            "featuredOnly": false,
-            "moreLink": {
-              "label": "Explorar toda la tienda",
-              "href": "/tienda"
-            },
-            "tone": "default"
-          }
-        },
-        {
-          "order": 4,
           "key": "galeria_ritual",
           "name": "Galería deslizable de escenas reales",
           "description": "",
+          "order": 4,
           "isVisible": true,
           "schema": [
             {
@@ -1021,12 +1039,12 @@
                   "label": "Formato del módulo",
                   "options": [
                     {
-                      "value": "tall",
-                      "label": "tall"
+                      "label": "tall",
+                      "value": "tall"
                     },
                     {
-                      "value": "wide",
-                      "label": "wide"
+                      "label": "wide",
+                      "value": "wide"
                     }
                   ]
                 },
@@ -1044,8 +1062,6 @@
             }
           ],
           "data": {
-            "heading": "En tu rutina real.",
-            "countSuffix": "escenas de uso diario",
             "frames": [
               {
                 "kind": "tall",
@@ -1077,14 +1093,16 @@
                 "image": "/uploads/media/alma-mineral-duo-trio-estudio-1794429204048-lol7.webp",
                 "imageAlt": "Presentación de frascos de Desodorante Natural Alma Mineral de piedra de alumbre y aceites esenciales"
               }
-            ]
+            ],
+            "heading": "En tu rutina real.",
+            "countSuffix": "escenas de uso diario"
           }
         },
         {
-          "order": 5,
           "key": "respaldo_integrativo",
           "name": "Retrato y cita desplazada: visión integrativa",
           "description": "",
+          "order": 5,
           "isVisible": true,
           "schema": [
             {
@@ -1124,20 +1142,20 @@
             }
           ],
           "data": {
-            "portrait": "/uploads/media/alma-mineral-respaldo-integrativo-1794429212856-lqdd.webp",
-            "portraitAlt": "Especialista en medicina integrativa sosteniendo el Desodorante Natural Alma Mineral",
             "quote": "Cuidar la piel axilar empieza por dejar que respire: controlar las bacterias en superficie sin obstruir los poros devuelve su calma y pH natural.",
+            "portrait": "/uploads/media/alma-mineral-respaldo-integrativo-1794429212856-lqdd.webp",
             "authorName": "Filosofía de Cuidado Integrativo",
             "authorRole": "Formulación botánico-mineral · Alma Mineral Colombia",
             "detailImage": "/uploads/media/alma-mineral-frasco-individual-1794429198174-ciic.webp",
+            "portraitAlt": "Especialista en medicina integrativa sosteniendo el Desodorante Natural Alma Mineral",
             "detailImageAlt": "Desodorante Natural Alma Mineral en presentación spray individual"
           }
         },
         {
-          "order": 6,
           "key": "preguntas",
           "name": "Preguntas frecuentes",
           "description": "",
+          "order": 6,
           "isVisible": true,
           "schema": [
             {
@@ -1170,74 +1188,74 @@
             {
               "key": "tone",
               "type": "select",
+              "group": "style",
               "label": "Fondo de la sección",
               "options": [
                 {
-                  "value": "default",
-                  "label": "Fondo principal"
+                  "label": "Fondo principal",
+                  "value": "default"
                 },
                 {
-                  "value": "alt",
-                  "label": "Fondo alterno"
+                  "label": "Fondo alterno",
+                  "value": "alt"
                 },
                 {
-                  "value": "inverse",
-                  "label": "Invertido (oscuro sobre claro o viceversa)"
+                  "label": "Invertido (oscuro sobre claro o viceversa)",
+                  "value": "inverse"
                 },
                 {
-                  "value": "accent",
-                  "label": "Color de acento"
+                  "label": "Color de acento",
+                  "value": "accent"
                 }
-              ],
-              "group": "style"
+              ]
             },
             {
               "key": "anchor",
+              "help": "Permite enlazar esta sección con #ancla desde el menú.",
               "type": "text",
-              "label": "Ancla para enlaces (#)",
               "group": "style",
-              "placeholder": "contacto",
-              "help": "Permite enlazar esta sección con #ancla desde el menú."
+              "label": "Ancla para enlaces (#)",
+              "placeholder": "contacto"
             }
           ],
           "data": {
-            "_block": "faq.accordion",
-            "heading": "Preguntas frecuentes del ritual.",
+            "tone": "default",
             "intro": "Todo sobre la aplicación, el periodo de adaptación, los envíos en Colombia y los pagos con Wompi o contraentrega.",
             "items": [
               {
-                "question": "¿Cuál es la diferencia entre Alma Mineral y un antitranspirante comercial?",
-                "answer": "Los antitranspirantes comerciales usan clorhidrato de aluminio sintético para taponar los conductos del sudor. Alma Mineral usa **Piedra de Alumbre natural (`Potassium Alum`)**, cuya molécula permanece en la superficie neutralizando las bacterias del mal olor mientras deja respirar tus poros."
+                "answer": "Los antitranspirantes comerciales usan clorhidrato de aluminio sintético para taponar los conductos del sudor. Alma Mineral usa **Piedra de Alumbre natural (`Potassium Alum`)**, cuya molécula permanece en la superficie neutralizando las bacterias del mal olor mientras deja respirar tus poros.",
+                "question": "¿Cuál es la diferencia entre Alma Mineral y un antitranspirante comercial?"
               },
               {
-                "question": "¿Necesito un periodo de transición al dejar mi antitranspirante anterior?",
-                "answer": "Algunas personas notan de 3 a 7 días de ajuste mientras sus poros liberan residuos acumulados de antitranspirantes sintéticos. Durante esos días puedes reaplicar Alma Mineral al mediodía; luego una sola aplicación tras la ducha protege toda la jornada."
+                "answer": "Algunas personas notan de 3 a 7 días de ajuste mientras sus poros liberan residuos acumulados de antitranspirantes sintéticos. Durante esos días puedes reaplicar Alma Mineral al mediodía; luego una sola aplicación tras la ducha protege toda la jornada.",
+                "question": "¿Necesito un periodo de transición al dejar mi antitranspirante anterior?"
               },
               {
-                "question": "¿Mancha las camisas blancas o la ropa deportiva oscura?",
-                "answer": "No. Su fórmula líquida transparente no contiene ceras, talcos ni clorhidrato de aluminio, por lo que no deja marcas blancas al vestirte ni manchas amarillas con los lavados."
+                "answer": "No. Su fórmula líquida transparente no contiene ceras, talcos ni clorhidrato de aluminio, por lo que no deja marcas blancas al vestirte ni manchas amarillas con los lavados.",
+                "question": "¿Mancha las camisas blancas o la ropa deportiva oscura?"
               },
               {
-                "question": "¿Sirve para piel sensible, adolescentes o después de depilarse?",
-                "answer": "Sí. Al no contener alcohol irritante ni parabenos e incorporar **Vitamina E** y **Omega 6**, calma la piel recién depilada y es seguro como primer desodorante desde la adolescencia."
+                "answer": "Sí. Al no contener alcohol irritante ni parabenos e incorporar **Vitamina E** y **Omega 6**, calma la piel recién depilada y es seguro como primer desodorante desde la adolescencia.",
+                "question": "¿Sirve para piel sensible, adolescentes o después de depilarse?"
               },
               {
-                "question": "¿Cuánto cuesta el envío y cuánto tarda en llegar?",
-                "answer": "Despachamos desde el Valle del Cauca a toda Colombia por **$5.000 COP** (1 a 3 días hábiles en Cali y Valle; 2 a 5 días hábiles en el resto del país). En compras desde **$95.000 COP**, como el Pack Ritual x3, el envío es **gratis**."
+                "answer": "Despachamos desde el Valle del Cauca a toda Colombia por **$5.000 COP** (1 a 3 días hábiles en Cali y Valle; 2 a 5 días hábiles en el resto del país). En compras desde **$95.000 COP**, como el Pack Ritual x3, el envío es **gratis**.",
+                "question": "¿Cuánto cuesta el envío y cuánto tarda en llegar?"
               },
               {
-                "question": "¿Qué medios de pago reciben?",
-                "answer": "Recibimos pagos en línea seguros gestionados por **Wompi** (PSE, Nequi, tarjetas débito y crédito, Bancolombia) y también **Pago contraentrega** en efectivo al recibir tu paquete."
+                "answer": "Recibimos pagos en línea seguros gestionados por **Wompi** (PSE, Nequi, tarjetas débito y crédito, Bancolombia) y también **Pago contraentrega** en efectivo al recibir tu paquete.",
+                "question": "¿Qué medios de pago reciben?"
               }
             ],
-            "tone": "default"
+            "_block": "faq.accordion",
+            "heading": "Preguntas frecuentes del ritual."
           }
         },
         {
-          "order": 7,
           "key": "cierre_botica",
           "name": "Fotografía final a sangre con llamado al ritual",
           "description": "",
+          "order": 7,
           "isVisible": true,
           "schema": [
             {
@@ -1267,32 +1285,32 @@
             }
           ],
           "data": {
-            "image": "/uploads/media/alma-mineral-ritual-piedra-pizarra-1794429205629-ohwr.webp",
-            "imageAlt": "Desodorante Alma Mineral sobre mesón de piedra pizarra oscura junto a toallas de algodón blanco",
-            "heading": "Empieza hoy tu ritual mineral.",
-            "body": "Pide tu frasco individual por $37.000 COP o lleva el Pack Ritual x3 con envío gratis a cualquier ciudad de Colombia.",
             "cta": {
-              "label": "Pedir Alma Mineral",
-              "href": "/tienda"
-            }
+              "href": "/tienda",
+              "label": "Pedir Alma Mineral"
+            },
+            "body": "Pide tu frasco individual por $37.000 COP o lleva el Pack Ritual x3 con envío gratis a cualquier ciudad de Colombia.",
+            "image": "/uploads/media/alma-mineral-ritual-piedra-pizarra-1794429205629-ohwr.webp",
+            "heading": "Empieza hoy tu ritual mineral.",
+            "imageAlt": "Desodorante Alma Mineral sobre mesón de piedra pizarra oscura junto a toallas de algodón blanco"
           }
         }
       ]
     },
     {
-      "order": 1,
       "title": "Tienda",
       "slug": "/tienda",
       "description": "Catálogo completo de Desodorante Natural Alma Mineral y packs rituales",
       "seoTitle": "Tienda · Desodorante Natural Alma Mineral y Packs Rituales",
-      "seoDescription": "Compra en línea el Desodorante Natural Alma Mineral ($37.000 COP) o ahorra con nuestros packs rituales. Pago con Wompi o contraentrega y envío nacional por $5.000 COP.",
       "seoImage": "/uploads/media/alma-mineral-pack-x3-blanco-1794429202014-mn5e.webp",
+      "order": 1,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "catalogo_tienda",
           "name": "Catálogo de la tienda",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -1323,16 +1341,16 @@
               "label": "Columnas",
               "options": [
                 {
-                  "value": "2",
-                  "label": "2"
+                  "label": "2",
+                  "value": "2"
                 },
                 {
-                  "value": "3",
-                  "label": "3"
+                  "label": "3",
+                  "value": "3"
                 },
                 {
-                  "value": "4",
-                  "label": "4"
+                  "label": "4",
+                  "value": "4"
                 }
               ]
             },
@@ -1348,11 +1366,11 @@
             },
             {
               "key": "pageSize",
-              "type": "number",
-              "label": "Elementos por página",
-              "min": 0,
               "max": 60,
-              "help": "0 usa el valor de la colección (12 si no tiene)."
+              "min": 0,
+              "help": "0 usa el valor de la colección (12 si no tiene).",
+              "type": "number",
+              "label": "Elementos por página"
             },
             {
               "key": "showSort",
@@ -1366,9 +1384,9 @@
             },
             {
               "key": "whatsappOrder",
+              "help": "Requiere activar los pedidos por WhatsApp en Ajustes → WhatsApp.",
               "type": "boolean",
-              "label": "Botón «Pedir por WhatsApp» en cada producto",
-              "help": "Requiere activar los pedidos por WhatsApp en Ajustes → WhatsApp."
+              "label": "Botón «Pedir por WhatsApp» en cada producto"
             },
             {
               "key": "showRatings",
@@ -1388,52 +1406,52 @@
             {
               "key": "tone",
               "type": "select",
+              "group": "style",
               "label": "Fondo de la sección",
               "options": [
                 {
-                  "value": "default",
-                  "label": "Fondo principal"
+                  "label": "Fondo principal",
+                  "value": "default"
                 },
                 {
-                  "value": "alt",
-                  "label": "Fondo alterno"
+                  "label": "Fondo alterno",
+                  "value": "alt"
                 },
                 {
-                  "value": "inverse",
-                  "label": "Invertido (oscuro sobre claro o viceversa)"
+                  "label": "Invertido (oscuro sobre claro o viceversa)",
+                  "value": "inverse"
                 },
                 {
-                  "value": "accent",
-                  "label": "Color de acento"
+                  "label": "Color de acento",
+                  "value": "accent"
                 }
-              ],
-              "group": "style"
+              ]
             },
             {
               "key": "anchor",
+              "help": "Permite enlazar esta sección con #ancla desde el menú.",
               "type": "text",
-              "label": "Ancla para enlaces (#)",
               "group": "style",
-              "placeholder": "contacto",
-              "help": "Permite enlazar esta sección con #ancla desde el menú."
+              "label": "Ancla para enlaces (#)",
+              "placeholder": "contacto"
             }
           ],
           "data": {
-            "_block": "products.catalog",
-            "heading": "La botica en línea.",
+            "tone": "default",
             "intro": "Todas nuestras presentaciones se despachan recién elaboradas en frasco de vidrio ámbar. Usa el código ALMAMINERAL10 para recibir 10 % de bienvenida en tu primer pedido.",
+            "_block": "products.catalog",
             "source": "productos",
-            "showFilters": true,
             "columns": "3",
-            "featuredOnly": false,
-            "tone": "default"
+            "heading": "La botica en línea.",
+            "showFilters": true,
+            "featuredOnly": false
           }
         },
         {
-          "order": 1,
           "key": "promesa_envio",
           "name": "Condiciones claras de compra",
           "description": "",
+          "order": 1,
           "isVisible": true,
           "schema": [
             {
@@ -1452,16 +1470,16 @@
               "label": "Columnas",
               "options": [
                 {
-                  "value": "2",
-                  "label": "2"
+                  "label": "2",
+                  "value": "2"
                 },
                 {
-                  "value": "3",
-                  "label": "3"
+                  "label": "3",
+                  "value": "3"
                 },
                 {
-                  "value": "4",
-                  "label": "4"
+                  "label": "4",
+                  "value": "4"
                 }
               ]
             },
@@ -1476,116 +1494,116 @@
                   "label": "Ícono",
                   "options": [
                     {
-                      "value": "none",
-                      "label": "Sin ícono"
+                      "label": "Sin ícono",
+                      "value": "none"
                     },
                     {
-                      "value": "check",
-                      "label": "Verificación"
+                      "label": "Verificación",
+                      "value": "check"
                     },
                     {
-                      "value": "shield",
-                      "label": "Escudo"
+                      "label": "Escudo",
+                      "value": "shield"
                     },
                     {
-                      "value": "clock",
-                      "label": "Reloj"
+                      "label": "Reloj",
+                      "value": "clock"
                     },
                     {
-                      "value": "truck",
-                      "label": "Envío"
+                      "label": "Envío",
+                      "value": "truck"
                     },
                     {
-                      "value": "heart",
-                      "label": "Corazón"
+                      "label": "Corazón",
+                      "value": "heart"
                     },
                     {
-                      "value": "leaf",
-                      "label": "Hoja"
+                      "label": "Hoja",
+                      "value": "leaf"
                     },
                     {
-                      "value": "map-pin",
-                      "label": "Ubicación"
+                      "label": "Ubicación",
+                      "value": "map-pin"
                     },
                     {
-                      "value": "phone",
-                      "label": "Teléfono"
+                      "label": "Teléfono",
+                      "value": "phone"
                     },
                     {
-                      "value": "users",
-                      "label": "Personas"
+                      "label": "Personas",
+                      "value": "users"
                     },
                     {
-                      "value": "award",
-                      "label": "Premio"
+                      "label": "Premio",
+                      "value": "award"
                     },
                     {
-                      "value": "wrench",
-                      "label": "Herramienta"
+                      "label": "Herramienta",
+                      "value": "wrench"
                     },
                     {
-                      "value": "calendar",
-                      "label": "Calendario"
+                      "label": "Calendario",
+                      "value": "calendar"
                     },
                     {
-                      "value": "credit-card",
-                      "label": "Pago"
+                      "label": "Pago",
+                      "value": "credit-card"
                     },
                     {
-                      "value": "book",
-                      "label": "Libro"
+                      "label": "Libro",
+                      "value": "book"
                     },
                     {
-                      "value": "home",
-                      "label": "Casa"
+                      "label": "Casa",
+                      "value": "home"
                     },
                     {
-                      "value": "chart",
-                      "label": "Gráfica"
+                      "label": "Gráfica",
+                      "value": "chart"
                     },
                     {
-                      "value": "message",
-                      "label": "Mensaje"
+                      "label": "Mensaje",
+                      "value": "message"
                     },
                     {
-                      "value": "globe",
-                      "label": "Mundo"
+                      "label": "Mundo",
+                      "value": "globe"
                     },
                     {
-                      "value": "zap",
-                      "label": "Rayo"
+                      "label": "Rayo",
+                      "value": "zap"
                     },
                     {
-                      "value": "camera",
-                      "label": "Cámara"
+                      "label": "Cámara",
+                      "value": "camera"
                     },
                     {
-                      "value": "star",
-                      "label": "Estrella"
+                      "label": "Estrella",
+                      "value": "star"
                     },
                     {
-                      "value": "coffee",
-                      "label": "Café"
+                      "label": "Café",
+                      "value": "coffee"
                     },
                     {
-                      "value": "stethoscope",
-                      "label": "Salud"
+                      "label": "Salud",
+                      "value": "stethoscope"
                     },
                     {
-                      "value": "graduation",
-                      "label": "Educación"
+                      "label": "Educación",
+                      "value": "graduation"
                     },
                     {
-                      "value": "briefcase",
-                      "label": "Maletín"
+                      "label": "Maletín",
+                      "value": "briefcase"
                     },
                     {
-                      "value": "lock",
-                      "label": "Candado"
+                      "label": "Candado",
+                      "value": "lock"
                     },
                     {
-                      "value": "code",
-                      "label": "Código"
+                      "label": "Código",
+                      "value": "code"
                     }
                   ]
                 },
@@ -1609,77 +1627,77 @@
             {
               "key": "tone",
               "type": "select",
+              "group": "style",
               "label": "Fondo de la sección",
               "options": [
                 {
-                  "value": "default",
-                  "label": "Fondo principal"
+                  "label": "Fondo principal",
+                  "value": "default"
                 },
                 {
-                  "value": "alt",
-                  "label": "Fondo alterno"
+                  "label": "Fondo alterno",
+                  "value": "alt"
                 },
                 {
-                  "value": "inverse",
-                  "label": "Invertido (oscuro sobre claro o viceversa)"
+                  "label": "Invertido (oscuro sobre claro o viceversa)",
+                  "value": "inverse"
                 },
                 {
-                  "value": "accent",
-                  "label": "Color de acento"
+                  "label": "Color de acento",
+                  "value": "accent"
                 }
-              ],
-              "group": "style"
+              ]
             },
             {
               "key": "anchor",
+              "help": "Permite enlazar esta sección con #ancla desde el menú.",
               "type": "text",
-              "label": "Ancla para enlaces (#)",
               "group": "style",
-              "placeholder": "contacto",
-              "help": "Permite enlazar esta sección con #ancla desde el menú."
+              "label": "Ancla para enlaces (#)",
+              "placeholder": "contacto"
             }
           ],
           "data": {
-            "_block": "features.grid",
-            "heading": "Directo de nuestra botica a tu puerta.",
+            "tone": "default",
             "intro": "Sin costos ocultos al llegar al pago.",
-            "columns": "3",
             "items": [
               {
+                "body": "Tarifa única en toda Colombia y envío gratis automático en pedidos desde $95.000 COP.",
                 "icon": "truck",
-                "title": "Envío nacional $5.000 COP",
-                "body": "Tarifa única en toda Colombia y envío gratis automático en pedidos desde $95.000 COP."
+                "title": "Envío nacional $5.000 COP"
               },
               {
+                "body": "Paga con PSE, Nequi, tarjetas o Bancolombia mediante Wompi, o paga en efectivo al recibir.",
                 "icon": "shield",
-                "title": "Wompi y Contraentrega",
-                "body": "Paga con PSE, Nequi, tarjetas o Bancolombia mediante Wompi, o paga en efectivo al recibir."
+                "title": "Wompi y Contraentrega"
               },
               {
+                "body": "Si tu frasco sufre algún percance en el transporte, lo reponemos sin costo escribiéndonos con tu número de pedido.",
                 "icon": "leaf",
-                "title": "Fórmula fresca garantizada",
-                "body": "Si tu frasco sufre algún percance en el transporte, lo reponemos sin costo escribiéndonos con tu número de pedido."
+                "title": "Fórmula fresca garantizada"
               }
             ],
-            "tone": "default"
+            "_block": "features.grid",
+            "columns": "3",
+            "heading": "Directo de nuestra botica a tu puerta."
           }
         }
       ]
     },
     {
-      "order": 2,
       "title": "Nuestra historia",
       "slug": "/nuestra-historia",
       "description": "El origen de Alma Mineral en el Valle del Cauca y nuestra filosofía de botica limpia",
       "seoTitle": "Nuestra Historia · Alma Mineral Colombia",
-      "seoDescription": "Conoce cómo nació Alma Mineral en el Valle del Cauca: un desodorante natural de Piedra de Alumbre y aceites esenciales creado para proteger sin agredir tu cuerpo.",
       "seoImage": "/uploads/media/alma-mineral-ritual-travertino-1794429206736-sh3h.webp",
+      "order": 2,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "origen_hero",
           "name": "El origen de Alma Mineral",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -1713,67 +1731,67 @@
               "label": "Lado de la foto",
               "options": [
                 {
-                  "value": "right",
-                  "label": "Derecha"
+                  "label": "Derecha",
+                  "value": "right"
                 },
                 {
-                  "value": "left",
-                  "label": "Izquierda"
+                  "label": "Izquierda",
+                  "value": "left"
                 }
               ]
             },
             {
               "key": "tone",
               "type": "select",
+              "group": "style",
               "label": "Fondo de la sección",
               "options": [
                 {
-                  "value": "default",
-                  "label": "Fondo principal"
+                  "label": "Fondo principal",
+                  "value": "default"
                 },
                 {
-                  "value": "alt",
-                  "label": "Fondo alterno"
+                  "label": "Fondo alterno",
+                  "value": "alt"
                 },
                 {
-                  "value": "inverse",
-                  "label": "Invertido (oscuro sobre claro o viceversa)"
+                  "label": "Invertido (oscuro sobre claro o viceversa)",
+                  "value": "inverse"
                 },
                 {
-                  "value": "accent",
-                  "label": "Color de acento"
+                  "label": "Color de acento",
+                  "value": "accent"
                 }
-              ],
-              "group": "style"
+              ]
             },
             {
               "key": "anchor",
+              "help": "Permite enlazar esta sección con #ancla desde el menú.",
               "type": "text",
-              "label": "Ancla para enlaces (#)",
               "group": "style",
-              "placeholder": "contacto",
-              "help": "Permite enlazar esta sección con #ancla desde el menú."
+              "label": "Ancla para enlaces (#)",
+              "placeholder": "contacto"
             }
           ],
           "data": {
+            "cta": {
+              "href": "/ciencia-mineral",
+              "label": "Conocer la ciencia del poro libre"
+            },
+            "body": "**Alma Mineral** nació en el Valle del Cauca a partir de una pregunta sencilla: ¿por qué seguimos aplicando sales sintéticas oclusivas en una de las zonas más delicadas y vascularizadas del cuerpo?\n\nDecidimos volver a lo esencial con rigor contemporáneo: tomar la **Piedra de Alumbre natural (`Potassium Alum`)**, empleada durante siglos como purificante mineral, y equilibrarla con extractos botánicos nobles y lípidos reparadores en una bruma ligera y cómoda de usar todos los días.",
+            "tone": "default",
+            "image": "/uploads/media/alma-mineral-ritual-travertino-1794429206736-sh3h.webp",
             "_block": "content.split",
             "heading": "Nació para cuidar la piel sin silenciarla.",
-            "body": "**Alma Mineral** nació en el Valle del Cauca a partir de una pregunta sencilla: ¿por qué seguimos aplicando sales sintéticas oclusivas en una de las zonas más delicadas y vascularizadas del cuerpo?\n\nDecidimos volver a lo esencial con rigor contemporáneo: tomar la **Piedra de Alumbre natural (`Potassium Alum`)**, empleada durante siglos como purificante mineral, y equilibrarla con extractos botánicos nobles y lípidos reparadores en una bruma ligera y cómoda de usar todos los días.",
-            "cta": {
-              "label": "Conocer la ciencia del poro libre",
-              "href": "/ciencia-mineral"
-            },
-            "image": "/uploads/media/alma-mineral-ritual-travertino-1794429206736-sh3h.webp",
             "imageAlt": "Frasco ámbar de Alma Mineral sobre piedra travertino cálida en baño de luz natural",
-            "imageSide": "right",
-            "tone": "default"
+            "imageSide": "right"
           }
         },
         {
-          "order": 1,
           "key": "filosofia_botica",
           "name": "Tres decisiones de oficio",
           "description": "",
+          "order": 1,
           "isVisible": true,
           "schema": [
             {
@@ -1816,78 +1834,78 @@
             {
               "key": "tone",
               "type": "select",
+              "group": "style",
               "label": "Fondo de la sección",
               "options": [
                 {
-                  "value": "default",
-                  "label": "Fondo principal"
+                  "label": "Fondo principal",
+                  "value": "default"
                 },
                 {
-                  "value": "alt",
-                  "label": "Fondo alterno"
+                  "label": "Fondo alterno",
+                  "value": "alt"
                 },
                 {
-                  "value": "inverse",
-                  "label": "Invertido (oscuro sobre claro o viceversa)"
+                  "label": "Invertido (oscuro sobre claro o viceversa)",
+                  "value": "inverse"
                 },
                 {
-                  "value": "accent",
-                  "label": "Color de acento"
+                  "label": "Color de acento",
+                  "value": "accent"
                 }
-              ],
-              "group": "style"
+              ]
             },
             {
               "key": "anchor",
+              "help": "Permite enlazar esta sección con #ancla desde el menú.",
               "type": "text",
-              "label": "Ancla para enlaces (#)",
               "group": "style",
-              "placeholder": "contacto",
-              "help": "Permite enlazar esta sección con #ancla desde el menú."
+              "label": "Ancla para enlaces (#)",
+              "placeholder": "contacto"
             }
           ],
           "data": {
-            "_block": "features.alternating",
-            "heading": "Lo que nunca negociamos.",
             "items": [
               {
-                "title": "Siete ingredientes con propósito real",
                 "body": "Cada componente cumple una función clara: Piedra de Alumbre y Neem para neutralizar bacterias; Romero y Menta para refrescar; Vitamina E y Omega 6 para reparar la piel; Cloruro de Sodio para estabilizar el pH.",
+                "link": {
+                  "href": "/producto/desodorante-natural-alma-mineral",
+                  "label": "Ver el producto insignia"
+                },
                 "image": "/uploads/media/alma-mineral-duo-trio-estudio-1794429204048-lol7.webp",
-                "imageAlt": "Presentación de frascos de Desodorante Natural Alma Mineral de piedra de alumbre y aceites esenciales",
-                "link": {
-                  "label": "Ver el producto insignia",
-                  "href": "/producto/desodorante-natural-alma-mineral"
-                }
+                "title": "Siete ingredientes con propósito real",
+                "imageAlt": "Presentación de frascos de Desodorante Natural Alma Mineral de piedra de alumbre y aceites esenciales"
               },
               {
-                "title": "Vidrio ámbar en lugar de plástico desechable",
                 "body": "Envasamos en vidrio ámbar porque filtra la radiación ultravioleta y mantiene intactas las propiedades de los aceites esenciales hasta la última atomización.",
-                "image": "/uploads/media/alma-mineral-trio-ambar-estudio-1794429199176-rc7l.webp",
-                "imageAlt": "Tres frascos de vidrio ámbar de Desodorante Natural Alma Mineral en luz cálida de botica",
                 "link": {
-                  "label": "Ver packs rituales",
-                  "href": "/tienda"
-                }
+                  "href": "/tienda",
+                  "label": "Ver packs rituales"
+                },
+                "image": "/uploads/media/alma-mineral-trio-ambar-estudio-1794429199176-rc7l.webp",
+                "title": "Vidrio ámbar en lugar de plástico desechable",
+                "imageAlt": "Tres frascos de vidrio ámbar de Desodorante Natural Alma Mineral en luz cálida de botica"
               },
               {
-                "title": "Apto para el calor y el movimiento en Colombia",
                 "body": "Probado en rutinas reales de trabajo, deporte y clima cálido: protege con eficacia sin dejar residuos en tus prendas.",
-                "image": "/uploads/media/alma-mineral-deporte-frescura-1794429209727-rxnt.webp",
-                "imageAlt": "Protección mineral para entrenamiento y días activos con Alma Mineral",
                 "link": {
-                  "label": "Comprar ahora",
-                  "href": "/tienda"
-                }
+                  "href": "/tienda",
+                  "label": "Comprar ahora"
+                },
+                "image": "/uploads/media/alma-mineral-deporte-frescura-1794429209727-rxnt.webp",
+                "title": "Apto para el calor y el movimiento en Colombia",
+                "imageAlt": "Protección mineral para entrenamiento y días activos con Alma Mineral"
               }
-            ]
+            ],
+            "_block": "features.alternating",
+            "heading": "Lo que nunca negociamos."
           }
         },
         {
-          "order": 2,
           "key": "origen_cierre",
           "name": "Llamado a la tienda",
           "description": "",
+          "order": 2,
           "isVisible": true,
           "schema": [
             {
@@ -1919,67 +1937,67 @@
             {
               "key": "tone",
               "type": "select",
+              "group": "style",
               "label": "Fondo de la sección",
               "options": [
                 {
-                  "value": "default",
-                  "label": "Fondo principal"
+                  "label": "Fondo principal",
+                  "value": "default"
                 },
                 {
-                  "value": "alt",
-                  "label": "Fondo alterno"
+                  "label": "Fondo alterno",
+                  "value": "alt"
                 },
                 {
-                  "value": "inverse",
-                  "label": "Invertido (oscuro sobre claro o viceversa)"
+                  "label": "Invertido (oscuro sobre claro o viceversa)",
+                  "value": "inverse"
                 },
                 {
-                  "value": "accent",
-                  "label": "Color de acento"
+                  "label": "Color de acento",
+                  "value": "accent"
                 }
-              ],
-              "group": "style"
+              ]
             },
             {
               "key": "anchor",
+              "help": "Permite enlazar esta sección con #ancla desde el menú.",
               "type": "text",
-              "label": "Ancla para enlaces (#)",
               "group": "style",
-              "placeholder": "contacto",
-              "help": "Permite enlazar esta sección con #ancla desde el menú."
+              "label": "Ancla para enlaces (#)",
+              "placeholder": "contacto"
             }
           ],
           "data": {
+            "body": "Recibe tu pedido en cualquier ciudad de Colombia con respaldo directo de nuestra marca.",
+            "tone": "inverse",
             "_block": "cta.banner",
             "headline": "Pásate al cuidado mineral.",
-            "body": "Recibe tu pedido en cualquier ciudad de Colombia con respaldo directo de nuestra marca.",
             "primaryCta": {
-              "label": "Ir a la tienda",
-              "href": "/tienda"
+              "href": "/tienda",
+              "label": "Ir a la tienda"
             },
             "secondaryCta": {
-              "label": "Escribirnos",
-              "href": "/contacto"
-            },
-            "tone": "inverse"
+              "href": "/contacto",
+              "label": "Escribirnos"
+            }
           }
         }
       ]
     },
     {
-      "order": 3,
       "title": "Ciencia mineral",
       "slug": "/ciencia-mineral",
       "description": "Diferencia científica entre el desodorante mineral de alumbre y el antitranspirante sintético",
       "seoTitle": "Desodorante Natural vs. Antitranspirante · Ciencia de Alma Mineral",
-      "seoDescription": "Descubre por qué el Potassium Alum de Alma Mineral neutraliza el mal olor sin tapar los poros ni manchar la ropa, a diferencia del clorhidrato de aluminio.",
       "seoImage": "/uploads/media/alma-mineral-respaldo-integrativo-1794429212856-lqdd.webp",
+      "order": 3,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "ciencia_intro",
           "name": "Transpirar es salud",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -2013,67 +2031,67 @@
               "label": "Lado de la foto",
               "options": [
                 {
-                  "value": "right",
-                  "label": "Derecha"
+                  "label": "Derecha",
+                  "value": "right"
                 },
                 {
-                  "value": "left",
-                  "label": "Izquierda"
+                  "label": "Izquierda",
+                  "value": "left"
                 }
               ]
             },
             {
               "key": "tone",
               "type": "select",
+              "group": "style",
               "label": "Fondo de la sección",
               "options": [
                 {
-                  "value": "default",
-                  "label": "Fondo principal"
+                  "label": "Fondo principal",
+                  "value": "default"
                 },
                 {
-                  "value": "alt",
-                  "label": "Fondo alterno"
+                  "label": "Fondo alterno",
+                  "value": "alt"
                 },
                 {
-                  "value": "inverse",
-                  "label": "Invertido (oscuro sobre claro o viceversa)"
+                  "label": "Invertido (oscuro sobre claro o viceversa)",
+                  "value": "inverse"
                 },
                 {
-                  "value": "accent",
-                  "label": "Color de acento"
+                  "label": "Color de acento",
+                  "value": "accent"
                 }
-              ],
-              "group": "style"
+              ]
             },
             {
               "key": "anchor",
+              "help": "Permite enlazar esta sección con #ancla desde el menú.",
               "type": "text",
-              "label": "Ancla para enlaces (#)",
               "group": "style",
-              "placeholder": "contacto",
-              "help": "Permite enlazar esta sección con #ancla desde el menú."
+              "label": "Ancla para enlaces (#)",
+              "placeholder": "contacto"
             }
           ],
           "data": {
+            "cta": {
+              "href": "/producto/desodorante-natural-alma-mineral",
+              "label": "Probar Alma Mineral"
+            },
+            "body": "Transpirar regula la temperatura corporal y acompaña los procesos naturales de eliminación de la piel. El sudor recién producido es prácticamente inodoro: el olor aparece solo cuando determinadas bacterias axilares lo metabolizan.\n\nPor eso **Alma Mineral** no busca bloquear tus glándulas sudoríparas, sino crear un entorno mineral limpio donde esas bacterias no pueden proliferar.",
+            "tone": "default",
+            "image": "/uploads/media/alma-mineral-respaldo-integrativo-1794429212856-lqdd.webp",
             "_block": "content.split",
             "heading": "Sudar es natural. El mal olor es opcional.",
-            "body": "Transpirar regula la temperatura corporal y acompaña los procesos naturales de eliminación de la piel. El sudor recién producido es prácticamente inodoro: el olor aparece solo cuando determinadas bacterias axilares lo metabolizan.\n\nPor eso **Alma Mineral** no busca bloquear tus glándulas sudoríparas, sino crear un entorno mineral limpio donde esas bacterias no pueden proliferar.",
-            "cta": {
-              "label": "Probar Alma Mineral",
-              "href": "/producto/desodorante-natural-alma-mineral"
-            },
-            "image": "/uploads/media/alma-mineral-respaldo-integrativo-1794429212856-lqdd.webp",
             "imageAlt": "Especialista en medicina integrativa sosteniendo el Desodorante Natural Alma Mineral",
-            "imageSide": "left",
-            "tone": "default"
+            "imageSide": "left"
           }
         },
         {
-          "order": 1,
           "key": "comparador_molecular",
           "name": "Comparador molecular del poro",
           "description": "",
+          "order": 1,
           "isVisible": true,
           "schema": [
             {
@@ -2162,11 +2180,13 @@
             }
           ],
           "data": {
-            "heading": "Proteger sin tapar poros.",
+            "cta": {
+              "href": "/ciencia-mineral",
+              "label": "Leer la guía completa de transición"
+            },
             "intro": "El sudor sano regula tu temperatura y casi no tiene olor. El mal olor aparece cuando las bacterias de la superficie lo descomponen. Cambia entre ambos mecanismos para ver qué ocurre dentro del poro.",
-            "alumTabLabel": "Piedra de Alumbre · Poro libre",
+            "heading": "Proteger sin tapar poros.",
             "alumTitle": "Escudo mineral en superficie",
-            "alumSummary": "El Potassium Alum tiene una estructura cristalina de gran peso molecular que permanece sobre la epidermis. Neutraliza las bacterias del mal olor mientras el conducto sudoríparo respira con libertad.",
             "alumPoints": [
               {
                 "text": "No atraviesa la barrera cutánea ni bloquea los ganglios axilares."
@@ -2178,10 +2198,8 @@
                 "text": "Con Vitamina E y Omega 6 que calman y unifican el tono natural de la piel."
               }
             ],
-            "alumMoleculeLabel": "Cristal Potassium Alum · Acción superficial",
-            "synthTabLabel": "Antitranspirante · Conducto tapado",
             "synthTitle": "Tapón químico dentro del conducto",
-            "synthSummary": "Las sales sintéticas como el clorhidrato de aluminio reaccionan con la humedad formando un gel que obstruye físicamente la salida natural del sudor.",
+            "alumSummary": "El Potassium Alum tiene una estructura cristalina de gran peso molecular que permanece sobre la epidermis. Neutraliza las bacterias del mal olor mientras el conducto sudoríparo respira con libertad.",
             "synthPoints": [
               {
                 "text": "Altera el equilibrio de la microbiota axilar y puede sensibilizar la piel tras el afeitado."
@@ -2193,19 +2211,19 @@
                 "text": "Al suspenderlo, el cuerpo suele requerir algunos días para liberar los poros obstruidos."
               }
             ],
-            "synthMoleculeLabel": "Clorhidrato de aluminio · Gel oclusivo",
+            "alumTabLabel": "Piedra de Alumbre · Poro libre",
+            "synthSummary": "Las sales sintéticas como el clorhidrato de aluminio reaccionan con la humedad formando un gel que obstruye físicamente la salida natural del sudor.",
+            "synthTabLabel": "Antitranspirante · Conducto tapado",
             "diagramCaption": "Diagrama interactivo de acción epidérmica: selecciona cada modo para observar el poro.",
-            "cta": {
-              "label": "Leer la guía completa de transición",
-              "href": "/ciencia-mineral"
-            }
+            "alumMoleculeLabel": "Cristal Potassium Alum · Acción superficial",
+            "synthMoleculeLabel": "Clorhidrato de aluminio · Gel oclusivo"
           }
         },
         {
-          "order": 2,
           "key": "guia_transicion",
           "name": "Cómo hacer el cambio en tres pasos",
           "description": "",
+          "order": 2,
           "isVisible": true,
           "schema": [
             {
@@ -2220,6 +2238,7 @@
             },
             {
               "key": "items",
+              "max": 6,
               "type": "array",
               "label": "Pasos",
               "fields": [
@@ -2233,79 +2252,78 @@
                   "type": "textarea",
                   "label": "Descripción"
                 }
-              ],
-              "max": 6
+              ]
             },
             {
               "key": "tone",
               "type": "select",
+              "group": "style",
               "label": "Fondo de la sección",
               "options": [
                 {
-                  "value": "default",
-                  "label": "Fondo principal"
+                  "label": "Fondo principal",
+                  "value": "default"
                 },
                 {
-                  "value": "alt",
-                  "label": "Fondo alterno"
+                  "label": "Fondo alterno",
+                  "value": "alt"
                 },
                 {
-                  "value": "inverse",
-                  "label": "Invertido (oscuro sobre claro o viceversa)"
+                  "label": "Invertido (oscuro sobre claro o viceversa)",
+                  "value": "inverse"
                 },
                 {
-                  "value": "accent",
-                  "label": "Color de acento"
+                  "label": "Color de acento",
+                  "value": "accent"
                 }
-              ],
-              "group": "style"
+              ]
             },
             {
               "key": "anchor",
+              "help": "Permite enlazar esta sección con #ancla desde el menú.",
               "type": "text",
-              "label": "Ancla para enlaces (#)",
               "group": "style",
-              "placeholder": "contacto",
-              "help": "Permite enlazar esta sección con #ancla desde el menú."
+              "label": "Ancla para enlaces (#)",
+              "placeholder": "contacto"
             }
           ],
           "data": {
-            "_block": "steps.process",
-            "heading": "Cómo hacer tu transición mineral.",
+            "tone": "default",
             "intro": "Si vienes de años usando antitranspirantes en barra o aerosol, sigue este ritual sencillo durante la primera semana.",
             "items": [
               {
-                "title": "Limpia sobre piel seca",
-                "body": "Lava tus axilas con un jabón suave en la ducha y sécalas por completo antes de aplicar."
+                "body": "Lava tus axilas con un jabón suave en la ducha y sécalas por completo antes de aplicar.",
+                "title": "Limpia sobre piel seca"
               },
               {
-                "title": "Atomiza de 3 a 4 veces",
-                "body": "Cubre toda la zona axilar con una bruma uniforme y espera unos segundos a que seque antes de vestirte."
+                "body": "Cubre toda la zona axilar con una bruma uniforme y espera unos segundos a que seque antes de vestirte.",
+                "title": "Atomiza de 3 a 4 veces"
               },
               {
-                "title": "Acompaña los primeros días",
-                "body": "Durante los primeros 3 a 5 días tus poros liberan residuos antiguos; si hace mucho calor, puedes reaplicar una vez al día."
+                "body": "Durante los primeros 3 a 5 días tus poros liberan residuos antiguos; si hace mucho calor, puedes reaplicar una vez al día.",
+                "title": "Acompaña los primeros días"
               }
             ],
-            "tone": "default"
+            "_block": "steps.process",
+            "heading": "Cómo hacer tu transición mineral."
           }
         }
       ]
     },
     {
-      "order": 4,
       "title": "Contacto",
       "slug": "/contacto",
       "description": "Atención al cliente, dudas sobre pedidos y alianzas mayoristas de Alma Mineral",
       "seoTitle": "Contacto y Distribución · Alma Mineral",
-      "seoDescription": "Escríbenos para resolver dudas sobre tu pedido, recibir asesoría sobre la transición al desodorante natural o consultar compras para tiendas y consultorios.",
       "seoImage": "/uploads/media/alma-mineral-lavamanos-ceramica-1794429208768-ajre.webp",
+      "order": 4,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "contacto_formulario",
           "name": "Formulario de contacto y alianzas",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -2320,11 +2338,11 @@
             },
             {
               "key": "formId",
+              "help": "Sin espacios. Agrupa los envíos en Contactos y lo usan los webhooks.",
               "type": "text",
               "label": "Identificador del formulario",
               "required": true,
-              "placeholder": "cotizacion",
-              "help": "Sin espacios. Agrupa los envíos en Contactos y lo usan los webhooks."
+              "placeholder": "cotizacion"
             },
             {
               "key": "fields",
@@ -2349,44 +2367,44 @@
                   "label": "Tipo",
                   "options": [
                     {
-                      "value": "text",
-                      "label": "Texto corto"
+                      "label": "Texto corto",
+                      "value": "text"
                     },
                     {
-                      "value": "email",
-                      "label": "Correo"
+                      "label": "Correo",
+                      "value": "email"
                     },
                     {
-                      "value": "tel",
-                      "label": "Teléfono"
+                      "label": "Teléfono",
+                      "value": "tel"
                     },
                     {
-                      "value": "textarea",
-                      "label": "Texto largo"
+                      "label": "Texto largo",
+                      "value": "textarea"
                     },
                     {
-                      "value": "select",
-                      "label": "Lista desplegable"
+                      "label": "Lista desplegable",
+                      "value": "select"
                     },
                     {
-                      "value": "radio",
-                      "label": "Opción única"
+                      "label": "Opción única",
+                      "value": "radio"
                     },
                     {
-                      "value": "checkbox",
-                      "label": "Casilla (sí/no) o varias opciones"
+                      "label": "Casilla (sí/no) o varias opciones",
+                      "value": "checkbox"
                     },
                     {
-                      "value": "date",
-                      "label": "Fecha"
+                      "label": "Fecha",
+                      "value": "date"
                     },
                     {
-                      "value": "number",
-                      "label": "Número"
+                      "label": "Número",
+                      "value": "number"
                     },
                     {
-                      "value": "file",
-                      "label": "Archivo (enlace)"
+                      "label": "Archivo (enlace)",
+                      "value": "file"
                     }
                   ]
                 },
@@ -2416,18 +2434,18 @@
                   "label": "Ancho",
                   "options": [
                     {
-                      "value": "full",
-                      "label": "Completo"
+                      "label": "Completo",
+                      "value": "full"
                     },
                     {
-                      "value": "half",
-                      "label": "Mitad"
+                      "label": "Mitad",
+                      "value": "half"
                     }
                   ]
                 }
               ],
-              "labelField": "label",
-              "singular": "campo"
+              "singular": "campo",
+              "labelField": "label"
             },
             {
               "key": "submitLabel",
@@ -2447,9 +2465,9 @@
             },
             {
               "key": "notifyEmails",
+              "help": "Solo se envía si el servidor tiene correo (SMTP) configurado.",
               "type": "text",
-              "label": "Avisar a estos correos (separados por coma)",
-              "help": "Solo se envía si el servidor tiene correo (SMTP) configurado."
+              "label": "Avisar a estos correos (separados por coma)"
             },
             {
               "key": "webhookUrl",
@@ -2463,46 +2481,46 @@
               "label": "Distribución",
               "options": [
                 {
-                  "value": "stacked",
-                  "label": "Encabezado arriba"
+                  "label": "Encabezado arriba",
+                  "value": "stacked"
                 },
                 {
-                  "value": "split",
-                  "label": "Encabezado a la izquierda"
+                  "label": "Encabezado a la izquierda",
+                  "value": "split"
                 }
               ]
             },
             {
               "key": "tone",
               "type": "select",
+              "group": "style",
               "label": "Fondo de la sección",
               "options": [
                 {
-                  "value": "default",
-                  "label": "Fondo principal"
+                  "label": "Fondo principal",
+                  "value": "default"
                 },
                 {
-                  "value": "alt",
-                  "label": "Fondo alterno"
+                  "label": "Fondo alterno",
+                  "value": "alt"
                 },
                 {
-                  "value": "inverse",
-                  "label": "Invertido (oscuro sobre claro o viceversa)"
+                  "label": "Invertido (oscuro sobre claro o viceversa)",
+                  "value": "inverse"
                 },
                 {
-                  "value": "accent",
-                  "label": "Color de acento"
+                  "label": "Color de acento",
+                  "value": "accent"
                 }
-              ],
-              "group": "style"
+              ]
             },
             {
               "key": "anchor",
+              "help": "Permite enlazar esta sección con #ancla desde el menú.",
               "type": "text",
-              "label": "Ancla para enlaces (#)",
               "group": "style",
-              "placeholder": "contacto",
-              "help": "Permite enlazar esta sección con #ancla desde el menú."
+              "label": "Ancla para enlaces (#)",
+              "placeholder": "contacto"
             },
             {
               "key": "sideImage",
@@ -2521,71 +2539,72 @@
             }
           ],
           "data": {
-            "_block": "form.custom",
-            "formId": "contacto",
-            "formName": "Contacto Alma Mineral",
-            "heading": "Hablemos de tu ritual o tu pedido.",
             "intro": "Respondemos cada mensaje desde el Valle del Cauca. También atendemos consultorios integrativos, tiendas saludables y gimnasios interesados en distribuir Alma Mineral.",
-            "submitLabel": "Enviar mensaje",
-            "successMessage": "Gracias por escribirnos. Recibimos tu mensaje y te responderemos muy pronto a tu correo.",
-            "layout": "split",
+            "_block": "form.custom",
             "fields": [
               {
                 "key": "nombre",
-                "label": "Tu nombre completo",
                 "type": "text",
+                "label": "Tu nombre completo",
                 "required": true,
                 "placeholder": "Ej. Camila Ríos"
               },
               {
                 "key": "email",
-                "label": "Correo electrónico",
                 "type": "email",
+                "label": "Correo electrónico",
                 "required": true,
                 "placeholder": "tu@correo.com"
               },
               {
                 "key": "telefono",
-                "label": "Celular o WhatsApp",
                 "type": "tel",
+                "label": "Celular o WhatsApp",
                 "required": false,
                 "placeholder": "300 000 0000"
               },
               {
                 "key": "motivo",
-                "label": "¿En qué podemos ayudarte?",
                 "type": "select",
-                "required": true,
-                "options": "Consulta sobre el producto, Estado de mi pedido, Distribución o compra mayorista, Otro motivo"
+                "label": "¿En qué podemos ayudarte?",
+                "options": "Consulta sobre el producto, Estado de mi pedido, Distribución o compra mayorista, Otro motivo",
+                "required": true
               },
               {
                 "key": "mensaje",
-                "label": "Mensaje",
                 "type": "textarea",
+                "label": "Mensaje",
                 "required": true,
                 "placeholder": "Cuéntanos cómo podemos ayudarte"
               }
             ],
+            "formId": "contacto",
+            "layout": "split",
+            "heading": "Hablemos de tu ritual o tu pedido.",
+            "formName": "Contacto Alma Mineral",
             "sideImage": "/uploads/media/alma-mineral-lavamanos-ceramica-1794429208768-ajre.webp",
+            "submitLabel": "Enviar mensaje",
             "sideImageAlt": "Desodorante Natural Alma Mineral junto a lavamanos de cerámica en rutina matutina",
+            "successMessage": "Gracias por escribirnos. Recibimos tu mensaje y te responderemos muy pronto a tu correo.",
             "directEmailLabel": "Correo directo de atención"
           }
         }
       ]
     },
     {
-      "order": 5,
       "title": "Rastrear pedido",
       "slug": "/rastreo",
       "description": "Consulta pública en tiempo real del estado de tu pedido y guía de transporte",
       "seoTitle": "Rastrear Pedido · Alma Mineral",
-      "seoDescription": "Ingresa tu número de orden o guía para consultar el estado de despacho de tu pedido Alma Mineral.",
+      "seoImage": "",
+      "order": 5,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "rastreo_pedido",
           "name": "Rastreo de pedido",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -2601,59 +2620,61 @@
             {
               "key": "tone",
               "type": "select",
+              "group": "style",
               "label": "Fondo de la sección",
               "options": [
                 {
-                  "value": "default",
-                  "label": "Fondo principal"
+                  "label": "Fondo principal",
+                  "value": "default"
                 },
                 {
-                  "value": "alt",
-                  "label": "Fondo alterno"
+                  "label": "Fondo alterno",
+                  "value": "alt"
                 },
                 {
-                  "value": "inverse",
-                  "label": "Invertido (oscuro sobre claro o viceversa)"
+                  "label": "Invertido (oscuro sobre claro o viceversa)",
+                  "value": "inverse"
                 },
                 {
-                  "value": "accent",
-                  "label": "Color de acento"
+                  "label": "Color de acento",
+                  "value": "accent"
                 }
-              ],
-              "group": "style"
+              ]
             },
             {
               "key": "anchor",
+              "help": "Permite enlazar esta sección con #ancla desde el menú.",
               "type": "text",
-              "label": "Ancla para enlaces (#)",
               "group": "style",
-              "placeholder": "contacto",
-              "help": "Permite enlazar esta sección con #ancla desde el menú."
+              "label": "Ancla para enlaces (#)",
+              "placeholder": "contacto"
             }
           ],
           "data": {
+            "tone": "default",
+            "intro": "Ingresa el código de tu orden (por ejemplo ORD-2026-…) o el número de guía que recibiste en tu correo.",
             "_block": "tracking.order",
             "heading": "Sigue el camino de tu pedido.",
-            "intro": "Ingresa el código de tu orden (por ejemplo ORD-2026-…) o el número de guía que recibiste en tu correo.",
             "placeholder": "ORD-2026-… o número de guía",
-            "submitLabel": "Consultar estado",
-            "tone": "default"
+            "submitLabel": "Consultar estado"
           }
         }
       ]
     },
     {
-      "order": 6,
       "title": "Finalizar compra",
       "slug": "/checkout",
       "description": "Pago seguro con Wompi o contraentrega",
       "seoTitle": "Finalizar Compra · Alma Mineral",
+      "seoImage": "",
+      "order": 6,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "pago_checkout",
           "name": "Checkout de la tienda",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -2678,26 +2699,28 @@
             }
           ],
           "data": {
-            "heading": "Completa tu pedido.",
             "intro": "Tus datos viajan cifrados. El envío nacional cuesta $5.000 COP y es gratuito en compras desde $95.000 COP.",
-            "couponHint": "¿Primera compra? Usa el código ALMAMINERAL10 para obtener 10 % de descuento.",
-            "wompiNote": "Pagos en línea procesados por Wompi (PSE, Nequi, Tarjetas, Bancolombia) y modalidad Contraentrega."
+            "heading": "Completa tu pedido.",
+            "wompiNote": "Pagos en línea procesados por Wompi (PSE, Nequi, Tarjetas, Bancolombia) y modalidad Contraentrega.",
+            "couponHint": "¿Primera compra? Usa el código ALMAMINERAL10 para obtener 10 % de descuento."
           }
         }
       ]
     },
     {
-      "order": 7,
       "title": "Estado de tu pedido",
       "slug": "/pedido",
       "description": "Confirmación de compra y retorno de pasarela Wompi",
       "seoTitle": "Confirmación de Pedido · Alma Mineral",
+      "seoImage": "",
+      "order": 7,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "confirmacion_pedido",
           "name": "Confirmación y estado del pago",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -2729,28 +2752,30 @@
           "data": {
             "heading": "Resumen de tu orden.",
             "paidBody": "Recibimos tu pago correctamente. Estamos preparando tu ritual en vidrio ámbar y te enviaremos la guía apenas salga de nuestra botica.",
-            "pendingBody": "Tu orden quedó registrada. Si elegiste contraentrega, ten listo el valor exacto al recibir; si tu pago en línea sigue validándose, se actualizará en segundos.",
             "failedBody": "La transacción no se completó en la pasarela. Puedes reintentar el pago en línea ahora mismo sin volver a llenar tus datos.",
             "continueCta": {
-              "label": "Seguir explorando la tienda",
-              "href": "/tienda"
-            }
+              "href": "/tienda",
+              "label": "Seguir explorando la tienda"
+            },
+            "pendingBody": "Tu orden quedó registrada. Si elegiste contraentrega, ten listo el valor exacto al recibir; si tu pago en línea sigue validándose, se actualizará en segundos."
           }
         }
       ]
     },
     {
-      "order": 8,
       "title": "Favoritos",
       "slug": "/favoritos",
       "description": "Presentaciones guardadas por el visitante",
       "seoTitle": "Tus Favoritos · Alma Mineral",
+      "seoImage": "",
+      "order": 8,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "lista_favoritos",
           "name": "Presentaciones guardadas",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -2771,27 +2796,29 @@
           ],
           "data": {
             "heading": "Tus presentaciones guardadas.",
-            "emptyBody": "Aún no has guardado rituales en esta lista. Explora nuestras presentaciones individuales y packs con ahorro.",
             "emptyCta": {
-              "label": "Ver presentaciones",
-              "href": "/tienda"
-            }
+              "href": "/tienda",
+              "label": "Ver presentaciones"
+            },
+            "emptyBody": "Aún no has guardado rituales en esta lista. Explora nuestras presentaciones individuales y packs con ahorro."
           }
         }
       ]
     },
     {
-      "order": 9,
       "title": "Mi cuenta",
       "slug": "/cuenta",
       "description": "Acceso, registro y perfil de cliente",
       "seoTitle": "Mi Cuenta · Alma Mineral",
+      "seoImage": "",
+      "order": 9,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "cuenta_acceso",
           "name": "Acceso y resumen de cuenta",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -2806,24 +2833,26 @@
             }
           ],
           "data": {
-            "heading": "Tu espacio en Alma Mineral.",
-            "intro": "Consulta el historial de tus pedidos, descarga comprobantes, guarda tus direcciones frecuentes y repite tu reserva mineral en segundos."
+            "intro": "Consulta el historial de tus pedidos, descarga comprobantes, guarda tus direcciones frecuentes y repite tu reserva mineral en segundos.",
+            "heading": "Tu espacio en Alma Mineral."
           }
         }
       ]
     },
     {
-      "order": 10,
       "title": "Mis pedidos",
       "slug": "/cuenta/pedidos",
       "description": "Historial de órdenes, rastreo y devoluciones del cliente",
       "seoTitle": "Mis Pedidos · Alma Mineral",
+      "seoImage": "",
+      "order": 10,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "cuenta_pedidos",
           "name": "Historial de pedidos del cliente",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -2838,24 +2867,26 @@
             }
           ],
           "data": {
-            "heading": "Historial de tus pedidos.",
-            "intro": "Revisa el estado de pago, sigue el número de guía en vivo o reintenta un pago pendiente en Wompi."
+            "intro": "Revisa el estado de pago, sigue el número de guía en vivo o reintenta un pago pendiente en Wompi.",
+            "heading": "Historial de tus pedidos."
           }
         }
       ]
     },
     {
-      "order": 11,
       "title": "Mis direcciones",
       "slug": "/cuenta/direcciones",
       "description": "Libreta de direcciones de entrega en Colombia",
       "seoTitle": "Mis Direcciones · Alma Mineral",
+      "seoImage": "",
+      "order": 11,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "cuenta_direcciones",
           "name": "Direcciones guardadas",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -2870,24 +2901,26 @@
             }
           ],
           "data": {
-            "heading": "Tus direcciones de entrega.",
-            "intro": "Guarda tu dirección en casa u oficina para agilizar tus próximas compras."
+            "intro": "Guarda tu dirección en casa u oficina para agilizar tus próximas compras.",
+            "heading": "Tus direcciones de entrega."
           }
         }
       ]
     },
     {
-      "order": 12,
       "title": "Restablecer contraseña",
       "slug": "/cuenta/restablecer",
       "description": "Recuperación segura de contraseña de cliente",
       "seoTitle": "Restablecer Contraseña · Alma Mineral",
+      "seoImage": "",
+      "order": 12,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "cuenta_restablecer",
           "name": "Cambio de contraseña con enlace seguro",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -2902,24 +2935,26 @@
             }
           ],
           "data": {
-            "heading": "Crea una nueva contraseña.",
-            "intro": "Escribe una clave segura de al menos 8 caracteres para recuperar el acceso a tu cuenta."
+            "intro": "Escribe una clave segura de al menos 8 caracteres para recuperar el acceso a tu cuenta.",
+            "heading": "Crea una nueva contraseña."
           }
         }
       ]
     },
     {
-      "order": 13,
       "title": "Privacidad, envíos y cambios",
       "slug": "/privacidad",
       "description": "Política de tratamiento de datos personales (Ley 1581 de 2012), envíos y garantías en Colombia",
       "seoTitle": "Política de Privacidad, Envíos y Garantías · Alma Mineral Colombia",
+      "seoImage": "",
+      "order": 13,
+      "isPublished": true,
       "sections": [
         {
-          "order": 0,
           "key": "politica_texto",
           "name": "Políticas legales y al consumidor",
           "description": "",
+          "order": 0,
           "isVisible": true,
           "schema": [
             {
@@ -2934,52 +2969,52 @@
               "label": "Ancho",
               "options": [
                 {
-                  "value": "narrow",
-                  "label": "Lectura (estrecho)"
+                  "label": "Lectura (estrecho)",
+                  "value": "narrow"
                 },
                 {
-                  "value": "wide",
-                  "label": "Ancho"
+                  "label": "Ancho",
+                  "value": "wide"
                 }
               ]
             },
             {
               "key": "tone",
               "type": "select",
+              "group": "style",
               "label": "Fondo de la sección",
               "options": [
                 {
-                  "value": "default",
-                  "label": "Fondo principal"
+                  "label": "Fondo principal",
+                  "value": "default"
                 },
                 {
-                  "value": "alt",
-                  "label": "Fondo alterno"
+                  "label": "Fondo alterno",
+                  "value": "alt"
                 },
                 {
-                  "value": "inverse",
-                  "label": "Invertido (oscuro sobre claro o viceversa)"
+                  "label": "Invertido (oscuro sobre claro o viceversa)",
+                  "value": "inverse"
                 },
                 {
-                  "value": "accent",
-                  "label": "Color de acento"
+                  "label": "Color de acento",
+                  "value": "accent"
                 }
-              ],
-              "group": "style"
+              ]
             },
             {
               "key": "anchor",
+              "help": "Permite enlazar esta sección con #ancla desde el menú.",
               "type": "text",
-              "label": "Ancla para enlaces (#)",
               "group": "style",
-              "placeholder": "contacto",
-              "help": "Permite enlazar esta sección con #ancla desde el menú."
+              "label": "Ancla para enlaces (#)",
+              "placeholder": "contacto"
             }
           ],
           "data": {
-            "_block": "content.richtext",
             "body": "## Transparencia, datos personales y garantías.\n\n### 1. Responsable del tratamiento de datos (Ley 1581 de 2012)\n**Alma Mineral**, con operación en el Valle del Cauca, Colombia, y correo oficial de contacto **almamineral.co@gmail.com**, es responsable del tratamiento de los datos personales recolectados a través de esta tienda en línea.\n\n### 2. Finalidad de la información recolectada\nLos datos suministrados al comprar, crear una cuenta o escribirnos se utilizan exclusivamente para procesar tus pedidos, coordinar la entrega con transportadoras nacionales, gestionar pagos seguros a través de **Wompi** o modalidad contraentrega, enviarte notificaciones del estado de tu orden y, únicamente si lo autorizas, compartir novedades de la marca.\n\n### 3. Derechos de los titulares (Habeas Data)\nEn cualquier momento puedes conocer, actualizar, rectificar o solicitar la supresión de tus datos personales escribiendo a **almamineral.co@gmail.com** o desde la sección **Mi cuenta**.\n\n### 4. Envíos en Colombia\n- **Cali y Valle del Cauca**: entrega estimada de 1 a 3 días hábiles tras la confirmación del pedido.\n- **Resto del país**: entrega estimada de 2 a 5 días hábiles según ciudad o municipio.\n- **Tarifa nacional**: $5.000 COP. Envío gratuito automático en compras iguales o superiores a $95.000 COP.\n\n### 5. Garantía de calidad y reposición por transporte\nPor tratarse de un producto de higiene y uso personal, los cambios aplican sobre unidades sin abrir dentro de los 5 días hábiles legales de retracto (Estatuto del Consumidor, Ley 1480 de 2011) o de manera inmediata y sin costo para el comprador si el frasco de vidrio ámbar presenta rotura, filtración o defecto en el atomizador al momento de recibir el paquete. Para activarla, escríbenos a **almamineral.co@gmail.com** indicando tu número de orden.",
-            "tone": "default"
+            "tone": "default",
+            "_block": "content.richtext"
           }
         }
       ]

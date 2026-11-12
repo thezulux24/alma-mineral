@@ -1,6 +1,6 @@
 /**
  * Generado por ltn v5.0.0 (ltn pull). No editar a mano.
- * Proyecto: Alma Mineral (almamineral) · 2026-11-12T00:42:34.910Z
+ * Proyecto: Alma Mineral (almamineral) · 2026-11-12T01:02:10.073Z
  * Tipos base del payload: import type { DeliveryPayload } from "@latinovation/cms-client"
  */
 
@@ -13,10 +13,15 @@ export interface CmsSectionMeta {
   widgets?: Array<Record<string, unknown>>;
 }
 
-/** Escenario partido: carta de botica y fotografía fija (/) */
+/** Escenario cinemático con tipografía en movimiento y aparición del frasco (/) */
 export interface HeroEscenarioSection extends CmsSectionMeta {
   headline?: string;
   subheadline?: string;
+  scrollCue?: string;
+  manifestoLine1?: string;
+  manifestoLine2?: string;
+  manifestoLine3?: string;
+  callouts?: Array<{ title?: string; detail?: string }>;
   ritualLabel?: string;
   primaryCta?: string | { href: string; label?: string };
   buyButtonLabel?: string;
@@ -25,6 +30,26 @@ export interface HeroEscenarioSection extends CmsSectionMeta {
   stageSlides?: Array<{ image?: string; imageAlt?: string; caption?: string }>;
   barLeft?: string;
   barRight?: string;
+}
+
+/** Presentaciones y packs rituales · bloque products.catalog (/) */
+export interface RitualesCatalogoSection extends CmsSectionMeta {
+  heading?: string;
+  intro?: string;
+  source?: string;
+  showFilters?: boolean;
+  columns?: "2" | "3" | "4";
+  featuredOnly?: boolean;
+  paginate?: boolean;
+  pageSize?: number;
+  showSort?: boolean;
+  showSearch?: boolean;
+  whatsappOrder?: boolean;
+  showRatings?: boolean;
+  showWishlist?: boolean;
+  moreLink?: string | { href: string; label?: string };
+  tone?: "default" | "alt" | "inverse" | "accent";
+  anchor?: string;
 }
 
 /** Comparador molecular del poro (/) */
@@ -52,26 +77,6 @@ export interface HerbarioMineralSection extends CmsSectionMeta {
   pinnedBottle?: string;
   pinnedBottleAlt?: string;
   chapters?: Array<{ title?: string; role?: string; image?: string; imageAlt?: string; notes?: Array<{ line?: string }> }>;
-}
-
-/** Presentaciones y packs rituales · bloque products.catalog (/) */
-export interface RitualesCatalogoSection extends CmsSectionMeta {
-  heading?: string;
-  intro?: string;
-  source?: string;
-  showFilters?: boolean;
-  columns?: "2" | "3" | "4";
-  featuredOnly?: boolean;
-  paginate?: boolean;
-  pageSize?: number;
-  showSort?: boolean;
-  showSearch?: boolean;
-  whatsappOrder?: boolean;
-  showRatings?: boolean;
-  showWishlist?: boolean;
-  moreLink?: string | { href: string; label?: string };
-  tone?: "default" | "alt" | "inverse" | "accent";
-  anchor?: string;
 }
 
 /** Galería deslizable de escenas reales (/) */
@@ -295,9 +300,9 @@ export interface PoliticaTextoSection extends CmsSectionMeta {
 
 export interface CmsSectionsByKey {
   "hero_escenario": HeroEscenarioSection;
+  "rituales_catalogo": RitualesCatalogoSection;
   "ciencia_poro": CienciaPoroSection;
   "herbario_mineral": HerbarioMineralSection;
-  "rituales_catalogo": RitualesCatalogoSection;
   "galeria_ritual": GaleriaRitualSection;
   "respaldo_integrativo": RespaldoIntegrativoSection;
   "preguntas": PreguntasSection;

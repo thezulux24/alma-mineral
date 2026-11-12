@@ -131,57 +131,105 @@ const home = {
   sections: [
     custom(
       'hero_escenario',
-      'Escenario partido: carta de botica y fotografía fija',
+      'Escenario cinemático con tipografía en movimiento y aparición del frasco',
       [
-        t('headline', 'Titular principal (máx. 2 líneas)'),
-        ta('subheadline', 'Descripción de la fórmula'),
+        t('headline', 'Titular principal de apertura'),
+        ta('subheadline', 'Descripción breve de la fórmula'),
+        t('scrollCue', 'Indicador de desplazamiento'),
+        t('manifestoLine1', 'Frase cinemática 1 al bajar'),
+        t('manifestoLine2', 'Frase cinemática 2 al bajar (acento dorado)'),
+        t('manifestoLine3', 'Frase cinemática 3 al bajar'),
+        arr('callouts', 'Puntos anatómicos que rodean el frasco', [
+          t('title', 'Activo o beneficio clave'),
+          t('detail', 'Explicación breve'),
+        ]),
         t('ritualLabel', 'Rótulo del selector de ritual'),
         link('primaryCta', 'Botón secundario a la tienda'),
         t('buyButtonLabel', 'Texto del botón de agregar ritual'),
-        img('bottleCutout', 'Frasco recortado con paralaje'),
+        img('bottleCutout', 'Frasco recortado transparente (protagonista en scroll)'),
         t('bottleCutoutAlt', 'Texto alternativo del frasco recortado'),
-        arr('stageSlides', 'Fotografías del escenario fijo (fundido cruzado)', [
+        arr('stageSlides', 'Fotografías de atmósfera tras el frasco', [
           img('image', 'Fotografía'),
           t('imageAlt', 'Texto alternativo'),
           t('caption', 'Pie breve de atmósfera'),
         ]),
-        t('barLeft', 'Barra inferior de la foto: origen'),
-        t('barRight', 'Barra inferior de la foto: envíos y pagos'),
+        t('barLeft', 'Sello inferior izquierdo: origen'),
+        t('barRight', 'Sello inferior derecho: envíos y pagos'),
       ],
       {
         headline: 'Tu piel respira libre.',
         subheadline:
-          'Desodorante natural en vidrio ámbar con Piedra de Alumbre, Neem, Romero, Menta, Vitamina E y Omega 6. Neutraliza el mal olor todo el día sin clorhidrato de aluminio ni manchas en tu ropa.',
-        ritualLabel: 'Elige tu presentación para agregar al carrito',
+          'Desodorante botánico-mineral en vidrio ámbar elaborado en Colombia con Piedra de Alumbre y aceites esenciales puros.',
+        scrollCue: 'Desliza para descubrir el ritual',
+        manifestoLine1: 'Sin aluminio sintético.',
+        manifestoLine2: 'Sin obstruir tus poros.',
+        manifestoLine3: 'Veinticuatro horas de pureza mineral.',
+        callouts: [
+          {
+            title: 'Piedra de Alumbre',
+            detail: 'Cristal antibacteriano que neutraliza el olor en superficie',
+          },
+          {
+            title: 'Aceite de Neem',
+            detail: 'Purificación fitoterapéutica activa para jornadas intensas',
+          },
+          {
+            title: 'Romero y Menta',
+            detail: 'Frescura herbal limpia que respeta tu perfume diario',
+          },
+          {
+            title: 'Vitamina E y Omega 6',
+            detail: 'Calma tras el afeitado y unifica el tono natural axilar',
+          },
+        ],
+        ritualLabel: 'Selecciona tu presentación Alma Mineral',
         buyButtonLabel: 'Agregar al ritual',
-        primaryCta: { label: 'Ver detalles en la tienda', href: '/tienda' },
+        primaryCta: { label: 'Explorar catálogo completo', href: '/tienda' },
         bottleCutout: U('bottleCutout'),
         bottleCutoutAlt: A('bottleCutout'),
         stageSlides: [
           {
             image: U('trioWarmStudio'),
             imageAlt: A('trioWarmStudio'),
-            caption: 'Vidrio ámbar que protege los extractos botánicos de la luz',
+            caption: 'Vidrio ámbar farmacéutico que protege los activos botánicos',
           },
           {
             image: U('vanitySlate'),
             imageAlt: A('vanitySlate'),
-            caption: 'Textura acuosa limpia sobre piel recién duchada',
+            caption: 'Bruma acuosa transparente: cero manchas en ropa blanca o negra',
           },
           {
             image: U('sportDroplets'),
             imageAlt: A('sportDroplets'),
-            caption: 'Protección real en días de entrenamiento y calor intenso',
+            caption: 'Eficacia comprobada en movimiento y clima cálido',
           },
           {
             image: U('vanityTravertine'),
             imageAlt: A('vanityTravertine'),
-            caption: 'Elaborado en el Valle del Cauca, Colombia',
+            caption: 'Formulado artesanalmente en el Valle del Cauca, Colombia',
           },
         ],
         barLeft: 'Botica en Valle del Cauca · Fórmula 100 % vegana',
-        barRight: 'Envío nacional $5.000 COP · Pagos Wompi o Contraentrega',
+        barRight: 'Envío nacional $5.000 COP · Wompi y Contraentrega',
       },
+    ),
+
+    block(
+      'products.catalog',
+      'rituales_catalogo',
+      'Presentaciones y packs rituales',
+      {
+        heading: 'Elige tu reserva mineral.',
+        intro:
+          'Una única fórmula magistral en tres presentaciones: frasco individual para iniciar tu transición, dúo para compartir y reserva de tres frascos con envío gratis en toda Colombia.',
+        source: 'productos',
+        showFilters: false,
+        columns: '3',
+        featuredOnly: false,
+        moreLink: { label: 'Explorar toda la tienda', href: '/tienda' },
+        tone: 'default',
+      },
+      [link('moreLink', 'Enlace hacia la tienda completa')],
     ),
 
     poreVisualizerSection('ciencia_poro'),
@@ -204,7 +252,7 @@ const home = {
       ],
       {
         heading: 'Siete activos puros.',
-        lead: 'Cada gota combina un cristal mineral antibacteriano con aceites esenciales y lípidos reparadores. Sin rellenos sintéticos, alcohol irritante ni parabenos.',
+        lead: 'Cada atomización une un cristal mineral antibacteriano con aceites esenciales puros y lípidos reparadores. Cero rellenos sintéticos, alcohol irritante o parabenos.',
         pinnedBottle: U('bottleCutout'),
         pinnedBottleAlt: A('bottleCutout'),
         chapters: [
@@ -254,24 +302,6 @@ const home = {
           },
         ],
       },
-    ),
-
-    block(
-      'products.catalog',
-      'rituales_catalogo',
-      'Presentaciones y packs rituales',
-      {
-        heading: 'Elige tu reserva mineral.',
-        intro:
-          'Una única fórmula honesta en tres presentaciones: frasco individual para empezar, dúo para compartir o llevar al gimnasio, y pack de tres con envío gratis a toda Colombia.',
-        source: 'productos',
-        showFilters: false,
-        columns: '3',
-        featuredOnly: false,
-        moreLink: { label: 'Explorar toda la tienda', href: '/tienda' },
-        tone: 'default',
-      },
-      [link('moreLink', 'Enlace hacia la tienda completa')],
     ),
 
     custom(

@@ -21,6 +21,7 @@ import {
   useOrderTracking,
   usePaymentReturn,
   useProducts,
+  useShopConfig,
   useWishlist,
   type CmsBlockProps,
 } from '@latinovation/cms-client/react';
@@ -59,6 +60,8 @@ export function CheckoutSection(_props: CmsBlockProps) {
   const { cmsUrl } = useCms();
   const cart = useCart();
   const money = useMoney();
+  const { config: shopConfig } = useShopConfig();
+  const isWompiSandbox = Boolean((shopConfig as any)?.paymentMethods?.wompi?.sandbox);
 
   const redirectUrl = typeof window !== 'undefined' ? `${window.location.origin}/pedido` : undefined;
   const co = useCheckout({
@@ -298,6 +301,11 @@ export function CheckoutSection(_props: CmsBlockProps) {
                     </label>
                   ))}
                 </div>
+                {co.provider === 'wompi' && isWompiSandbox ? (
+                  <p className="am-sandbox-notice">
+                    Modo de pruebas Wompi activo (Sandbox): puedes simular pagos aprobados con PSE, Nequi o tarjeta de prueba sin cargos reales.
+                  </p>
+                ) : null}
                 {co.errors.provider ? <p className="am-field-err">{co.errors.provider}</p> : null}
               </fieldset>
 
