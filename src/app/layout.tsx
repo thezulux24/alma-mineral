@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from 'next';
-import { Young_Serif, Source_Serif_4 } from 'next/font/google';
+import { Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';
 import { mediaUrl } from '@latinovation/cms-client';
 import './globals.css';
 import { CMS_SLUG, CMS_URL, getSite, PORTAL_ORIGINS, SITE_URL } from '@/lib/site';
-import { ldScript, organizationLd } from '@/lib/seo';
+import { ldScript, organizationLd, resolveOgImage } from '@/lib/seo';
 import {
   CartDrawer,
   CookieConsentBanner,
@@ -14,18 +14,18 @@ import {
   ToastBanner,
 } from '@/components/Shell';
 
-const youngSerif = Young_Serif({
-  weight: '400',
+const cormorant = Cormorant_Garamond({
+  weight: ['500', '600', '700'],
+  style: ['normal', 'italic'],
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-young-serif',
+  variable: '--font-cormorant',
   display: 'swap',
 });
 
-const sourceSerif = Source_Serif_4({
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
+const jakarta = Plus_Jakarta_Sans({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-source-serif',
+  variable: '--font-jakarta',
   display: 'swap',
 });
 
@@ -36,33 +36,71 @@ export async function generateMetadata(): Promise<Metadata> {
   const seo: Record<string, any> = site.seo || {};
   const g: Record<string, any> = site.global || {};
   const brand = g.brandName || site.project?.name || 'Alma Mineral';
-  const title = seo.metaTitle || `${brand} · Desodorante Natural de Piedra de Alumbre`;
+  const title =
+    seo.metaTitle || `${brand} | Desodorante Natural de Piedra de Alumbre en Colombia`;
   const description =
     seo.metaDescription ||
-    g.tagline ||
-    'Desodorante natural en spray con Piedra de Alumbre y aceites esenciales. Hecho en Colombia.';
+    'Desodorante natural en vidrio ámbar con Piedra de Alumbre, Neem, Romero, Menta y Vitamina E. 24h sin mal olor, sin clorhidrato de aluminio y sin manchar tu ropa. Envíos a toda Colombia.';
+  const ogImg = resolveOgImage(site, seo.ogImage);
 
   return {
     metadataBase: new URL(SITE_URL),
-    title: { default: title, template: `%s · ${brand}` },
+    title: { default: title, template: `%s | ${brand}` },
     description,
+    keywords: [
+      'desodorante natural Colombia',
+      'desodorante piedra de alumbre',
+      'desodorante sin aluminio Colombia',
+      'desodorante que no mancha la ropa',
+      'desodorante piel sensible axilas',
+      'Alma Mineral',
+      'desodorante vegano artesanal Colombia',
+      'potassium alum spray',
+    ],
+    authors: [{ name: brand, url: SITE_URL }],
+    creator: brand,
+    publisher: brand,
+    category: 'beauty',
+    alternates: {
+      canonical: SITE_URL,
+      languages: { 'es-CO': SITE_URL },
+    },
     icons: g.faviconUrl
       ? { icon: mediaUrl(g.faviconUrl, CMS_URL), apple: mediaUrl(g.faviconUrl, CMS_URL) }
-      : undefined,
+      : { icon: '/icon.webp', apple: '/icon.webp' },
     openGraph: {
       title,
       description,
+      url: SITE_URL,
       siteName: brand,
       locale: 'es_CO',
       type: 'website',
-      images: seo.ogImage ? [{ url: mediaUrl(seo.ogImage, CMS_URL) }] : undefined,
+      images: ogImg ? [{ url: ogImg, width: 1200, height: 1200, alt: title }] : undefined,
     },
-    robots: seo.robotsIndex === false ? { index: false, follow: false } : { index: true, follow: true },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ogImg ? [ogImg] : undefined,
+    },
+    robots:
+      seo.robotsIndex === false
+        ? { index: false, follow: false }
+        : {
+            index: true,
+            follow: true,
+            googleBot: {
+              index: true,
+              follow: true,
+              'max-image-preview': 'large',
+              'max-snippet': -1,
+            },
+          },
   };
 }
 
 export const viewport: Viewport = {
-  themeColor: '#1F381E',
+  themeColor: '#14261B',
   width: 'device-width',
   initialScale: 1,
 };
@@ -70,7 +108,7 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const site = await getSite();
   return (
-    <html lang="es-CO" className={`${youngSerif.variable} ${sourceSerif.variable}`}>
+    <html lang="es-CO" className={`${cormorant.variable} ${jakarta.variable}`}>
       <head>
         <link rel="preconnect" href={CMS_URL} />
       </head>

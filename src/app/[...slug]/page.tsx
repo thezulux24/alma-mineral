@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import { notFound, permanentRedirect, redirect } from 'next/navigation';
-import { mediaUrl } from '@latinovation/cms-client';
 import { SitePage } from '@/components/blocks/registry';
-import { CMS_URL, findCmsPage, getSite } from '@/lib/site';
+import { findCmsPage, getSite, SITE_URL } from '@/lib/site';
+import { breadcrumbLd, ldScript, resolveOgImage } from '@/lib/seo';
 
 export const revalidate = 60;
 
 type Props = { params: Promise<{ slug: string[] }> };
+
+const NOINDEX_PREFIXES = ['/checkout', '/pedido', '/cuenta', '/favoritos', '/carrito'];
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -15,15 +17,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = findCmsPage(site, pageSlug);
   if (!page) return {};
   const title = (page as any).seoTitle || page.title;
-  const description = (page as any).seoDescription || (page as any).description || undefined;
-  const seoImage = (page as any).seoImage;
+  const description =
+    (page as any).seoDescription ||
+    (page as any).description ||
+    `${page.title} en Alma Mineral Colombia · Desodorante natural en vidrio ámbar con Piedra de Alumbre y siete activos botánicos.`;
+  const ogImg = resolveOgImage(site, (page as any).seoImage);
+  const canonicalUrl = `${SITE_URL}${pageSlug}`;
+  const isPrivate = NOINDEX_PREFIXES.some((p) => pageSlug === p || pageSlug.startsWith(`${p}/`));
+
   return {
     title,
     description,
+    alternates: { canonical: canonicalUrl },
+    robots: isPrivate ? { index: false, follow: true } : { index: true, follow: true },
     openGraph: {
       title,
       description,
-      images: seoImage ? [{ url: mediaUrl(String(seoImage), CMS_URL) }] : undefined,
+      url: canonicalUrl,
+      locale: 'es_CO',
+      type: 'website',
+      images: ogImg ? [{ url: ogImg, alt: title }] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ogImg ? [ogImg] : undefined,
     },
   };
 }
@@ -46,5 +65,15 @@ export default async function CmsDynamicPage({ params }: Props) {
     notFound();
   }
 
-  return <SitePage pageSlug={pageSlug} />;
+  const crumbs = breadcrumbLd([
+    { name: 'Inicio', path: '/' },
+    { name: page.title || slug[slug.length - 1], path: pageSlug },
+  ]);
+
+  return (
+    <>
+      <SitePage pageSlug={pageSlug} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={ldScript(crumbs)} />
+    </>
+  );
 }
